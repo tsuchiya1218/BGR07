@@ -10,5 +10,5 @@ require "./common/banner.php";
 </div>
 
 <?php
-require "./common/footer.php"
+require "./common/footer.php";
 ?>
