@@ -16,9 +16,11 @@
 <!-- Menu -->
 <nav>
     <div style="text-align:center">
-        <a href="search.php">商品検索</a> |
-        <a href="campaign.php">キャンペーン</a> |
-        <a href="mypage.php">マイページ</a>
+        <a href="campaign.php">キャンペーン中</a> |
+        <a href="">（カテゴリ等）</a> |
+        <a href="">（ダミー）</a>
+        <a href="">（ダミー）</a>
+        <a href="">（ダミー）</a>
     </div>
 </nav>
 <h4 align = center>↑バナー部分↑</h4>
