@@ -9,7 +9,6 @@
 <a href="./cart.php">カート</a>
 <!-- Search -->
 <form style="text-align : right" class="form-inline" action=search.php method="post">
-    <input type="text" class="form-control" name="search" placeholder="◟( ˘ ³˘)◞ ♥検索" size="30">
     <button type="summit" class="btn btn-danger">Search</button>
 </form>
 
