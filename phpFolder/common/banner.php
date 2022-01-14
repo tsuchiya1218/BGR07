@@ -7,10 +7,7 @@
 <a href="./login.php">ログイン</a>
 <a href="./register.php">無料会員登録</a>
 <a href="./cart.php">カート</a>
-<!-- Search -->
-<form style="text-align : right" class="form-inline" action=search.php method="post">
-    <button type="summit" class="btn btn-danger">Search</button>
-</form>
+
 
 </br>
 <!-- Menu -->
