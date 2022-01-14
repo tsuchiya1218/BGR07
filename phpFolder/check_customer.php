@@ -7,11 +7,11 @@ session_start();
 <?php $page_title = '顧客情報入力' ?>
 
 <?php 
-require './site/header.php' 
+require './common/header.php' 
 ?>
 
 <?php
-require "./site/banner.php"
+require "./common/banner.php"
 ?>
 <p align="center">お客様の情報を確認してください。</p>
 <table align="center">
@@ -52,4 +52,4 @@ require "./site/banner.php"
     <input type="submit" value="次へ>>" onclick="location.href='./check_order.php'"/>
 </div>
 </br>
-<?php require './site/footer.php' ?>
+<?php require './common/footer.php' ?>

@@ -1,7 +1,7 @@
 <?php
 $page_title = 'マイページ';
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 <?php $page_title = 'マイページ' ?>
 
@@ -10,5 +10,5 @@ require "./site/banner.php";
 </div>
 
 <?php
-require "./site/footer.php"
+require "./common/footer.php"
 ?>

@@ -1,7 +1,7 @@
 <?php
 $page_title = 'カート';
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 
 <!-- 商品表示 -->
@@ -9,5 +9,5 @@ require "./site/banner.php";
 <p>！ログインしていなかった場合はログインページに遷移！</p>
 
 <?php
-require "./site/footer.php"
+require "./common/footer.php"
 ?>

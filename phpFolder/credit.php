@@ -4,8 +4,8 @@ session_start();
 ?>
 
 <?php
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 
 <div style="text-align:center">
@@ -65,5 +65,5 @@ require "./site/banner.php";
 </div>
 
 <?php
-require "./site/footer.php"
+require "./common/footer.php"
 ?>

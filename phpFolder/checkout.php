@@ -1,6 +1,6 @@
 <?php
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 
 <script language="javascript">
@@ -31,5 +31,5 @@ require "./site/banner.php";
 </div>
 
 <?php
-require "./site/footer.php"
+require "./common/footer.php"
 ?>

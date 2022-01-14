@@ -1,6 +1,6 @@
 <?php
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 
 </br>
@@ -10,5 +10,5 @@ require "./site/banner.php";
 </div>
 
 <?php
-require "./site/footer.php"
+require "./common/footer.php"
 ?>

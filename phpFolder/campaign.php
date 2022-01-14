@@ -1,7 +1,7 @@
 <?php
 $page_title = 'キャンペーン';
-require "./site/header.php";
-require "./site/banner.php";
+require "./common/header.php";
+require "./common/banner.php";
 ?>
 
 <div id="item" class="clearfix">
@@ -16,5 +16,5 @@ require "./site/banner.php";
 </div>
 
 <?php
-require "./site/footer.php";
+require "./common/footer.php";
 ?>
