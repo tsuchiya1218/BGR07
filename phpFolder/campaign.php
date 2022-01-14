@@ -6,8 +6,8 @@ require "./common/banner.php";
 
 <div id="item" class="clearfix">
     ！キャンペーン中の商品を表示！
-    <tr>
-        <td>
+    <ul>
+        <li>
             <div class="itemlist">
                 <p><a href="./detail.php"><img src="./img/case/case1.jpg" width="140" height="150"></a></p>
                 <dl>
@@ -15,8 +15,8 @@ require "./common/banner.php";
                     <dd>1000\</dd>
                 </dl>
             </div>
-        </td>
-        <td>
+        </li>
+        <li>
             <div class="itemlist">
                 <p><a href="./detail.php"><img src="./img/case/case1.jpg" width="140" height="150"></a></p>
                 <dl>
@@ -24,8 +24,8 @@ require "./common/banner.php";
                     <dd>1000\</dd>
                 </dl>
             </div>
-        </td>
-        <td>
+        </li>
+        <li>
             <div class="itemlist">
                 <p><a href="./detail.php"><img src="./img/case/case1.jpg" width="140" height="150"></a></p>
                 <dl>
@@ -33,8 +33,8 @@ require "./common/banner.php";
                     <dd>1000\</dd>
                 </dl>
             </div>
-        </td>
-    </tr>
+        </li>
+    </ul>
 </div>
 
 <?php
