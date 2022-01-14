@@ -6,7 +6,7 @@
         <img src="./img/Banner.png" width="500" height="150">
         <ul id="side">
             <li><a href="./login.php">ログイン</a></li>
-            <li><a href="./register.php">無料会員登録</a></li>
+            <li><a href="./register_customer.php">無料会員登録</a></li>
             <li><a href="./cart.php">カート</a></li>
         </ul>
     </a>
