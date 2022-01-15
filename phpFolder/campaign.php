@@ -12,7 +12,7 @@ require "./common/banner.php";
                 <p><a href="./detail.php"><img src="./img/case/case1.jpg" width="140" height="150"></a></p>
                 <dl>
                     <dt><a href="./detail.php">TEST.CASE</a></dt>
-                    <dd>1000\</dd>
+                    <dd>1000\</dd_
                 </dl>
             </div>
         </li>
