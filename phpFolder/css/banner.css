@@ -1,9 +1,15 @@
-#banner {
+.banner {
     width: 700px;
     margin: auto;
 }
 
-#side {
+.header_brand {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.side {
     list-style: none;
     width: 150px;
     float: right;
