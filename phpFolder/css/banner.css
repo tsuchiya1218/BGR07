@@ -1,8 +1,10 @@
-#banner{
+#banner {
     width: 700px;
     margin: auto;
 }
-#side{
+
+#side {
+    list-style: none;
     width: 150px;
     float: right;
 }
