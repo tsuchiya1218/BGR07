@@ -2,31 +2,53 @@
 <!-- 消します -->
 <h4 align=center>↓バナー部分↓</h4>
 <header class="header">
-    <div class="banner">
-        <div class="header_brand">
-            <a href="./index.php">
-                <!-- BannerIMG -->
-                <img src="./img/Banner.png" wclassth="150" height="45">
-            </a>
+    <div class="header_inner">
+        <div class="header_row">
+            <div class="header_brand">
+                <a href="./index.php">
+                    <!-- BannerIMG -->
+                    <img src="./img/Banner.png" width="150" height="45">
+                </a>
+            </div>
+            <div class="header_spacer">
+                <div class="search_bar">
+                    <form action="" method="POST">
+                        <input type="text" class="search_text">
+                        <div class="search_button">
+                            <img src="./img/serch.png" class="search_button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="./cart.php">
+                    <img src="./img/cart.png" width="45" height="45">
+                </a>
+            </div>
+            <div class="header_login">
+                <a href="./login.php">
+                    <img src="./img/login.png" width="45" height="45">
+                </a>
+            </div>
+            <div class="header_registration">
+                <a href="./register_customer.php">
+                    <img src="./img/registration.png" width="45" height="45">
+                </a>
+            </div>
         </div>
-        <div class="header_spascer">
-        </div>
-        <ul class="side">
-            <li><a href="./login.php">ログイン</a></li>
-            <li><a href="./register_customer.php">無料会員登録</a></li>
-            <li><a href="./cart.php">カート</a></li>
-        </ul>
     </div>
-    </br>
-    <!-- Menu -->
-    <nav>
-        <div class="menu" style="text-align:center">
-            <a href="campaign.php">キャンペーン中</a> |
-            <a href="">（カテゴリ等）</a> |
-            <a href="">（ダミー）</a>
-            <a href="">（ダミー）</a>
-            <a href="">（ダミー）</a>
+    <div class="category_navigation">
+        <div class="category_navigation_inner">
+            <div class="category_navigation_list">
+                <ul>
+                    <li><a href="campaign.php">キャンペーン中</a></li>
+                    <li><a href="">（カテゴリ等）</a></li>
+                    <li><a href="">（ダミー）</a></li>
+                    <li><a href="">（ダミー）</a></li>
+                    <li><a href="">（ダミー）</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>
+    </div>
 </header>
 <h4 align=center>↑バナー部分↑</h4>

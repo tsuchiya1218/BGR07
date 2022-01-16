@@ -1,16 +1,53 @@
-.banner {
+.header {}
+
+.header_inner {
+    max-width: 100%;
+}
+
+.header_row {
+    display: flex;
+    justify-content: space-between;
     width: 700px;
+    height: 45px;
     margin: auto;
 }
 
+.header_spacer {
+    width: 100%;
+}
+
+.search_bar {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.search_text {
+    display: block;
+    float: left;
+}
+
+.search_button {
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
 .header_brand {
-    position: fixed;
     top: 0;
     left: 0;
 }
 
-.side {
-    list-style: none;
+.header_menu {
     width: 150px;
     float: right;
+}
+
+.category_navigation_list {
+    width: 900px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
 }
