@@ -2,7 +2,11 @@ body {
     margin: 0px;
 }
 
-.header {}
+.header_row {
+    border: solid;
+    border-width: 1px 0px;
+    border-color: grey;
+}
 
 .header_inner {
     max-width: 100%;
@@ -24,6 +28,7 @@ body {
 }
 
 .header_brand a {
+    /*a要素がはみ出る、他のも修正してほしい*/
     display: block;
     height: 45px;
 }
@@ -41,10 +46,6 @@ body {
     position: relative;
 }
 
-.search_bar form {}
-
-.search_text.search_button {}
-
 .search_text {
     float: left;
     width: 100%;
@@ -59,11 +60,45 @@ body {
     top: 3px;
 }
 
-.category_navigation_list {
-    width: 900px;
+.category_navigation {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid;
+    border-color: grey;
 }
+
+.category_navigation_inner {
+    max-width: 100%;
+}
+
+.category_navigation_list {}
 
 ul {
     list-style: none;
-    display: flex;
+    margin: 0px;
+    padding: 0px;
+    height: 45px;
 }
+
+li {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    float: left;
+    height: 45px;
+}
+
+li a {
+    display: block;
+    padding: 0px 16px;
+    height: 45px;
+    margin: 0px;
+    line-height: 45px;
+}
+
+
+/*そもそもフレキシブルボックス使うのかインライン要素使うのかとか色々やり方合って困る*/
+
+
+/*バナー折り返したくないんだけど下の方謎のまま終わり*/

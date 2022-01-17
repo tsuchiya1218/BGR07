@@ -1,5 +1,4 @@
 <?php
-$page_title = 'トップページ';
 require "./common/header.php";
 require "./common/banner.php";
 ?>

@@ -34,17 +34,17 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="category_navigation">
-        <div class="category_navigation_inner">
-            <div class="category_navigation_list">
-                <ul>
-                    <li><a href="campaign.php">キャンペーン中</a></li>
-                    <li><a href="">（カテゴリ等）</a></li>
-                    <li><a href="">（ダミー）</a></li>
-                    <li><a href="">（ダミー）</a></li>
-                    <li><a href="">（ダミー）</a></li>
-                </ul>
+        <div class="category_navigation">
+            <div class="category_navigation_inner">
+                <div class="category_navigation_list">
+                    <ul>
+                        <li><a href="campaign.php">キャンペーン中</a></li>
+                        <li><a href="">セール中</a></li>
+                        <li><a href="">スマホケース</a></li>
+                        <li><a href="">スマホアクセ</a></li>
+                        <li><a href="">雑貨</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
