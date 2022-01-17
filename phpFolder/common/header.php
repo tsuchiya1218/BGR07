@@ -7,4 +7,3 @@
 </head>
 
 <body>
-    <h1 class="title"><?= $page_title ?></h1>

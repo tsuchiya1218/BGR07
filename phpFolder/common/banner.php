@@ -1,6 +1,4 @@
 <link rel="stylesheet" type="text/css" href="./css/banner.css">
-<!-- 消します -->
-<h4 align=center>↓バナー部分↓</h4>
 <header class="header">
     <div class="header_inner">
         <div class="header_row">
@@ -13,9 +11,9 @@
             <div class="header_spacer">
                 <div class="search_bar">
                     <form action="" method="POST">
-                        <input type="text" class="search_text">
+                        <input type="text" class="search_text" placeholder="検索">
                         <div class="search_button">
-                            <img src="./img/serch.png" class="search_button">
+                            <input type="image" src="./img/search.png" class="search_button" width="20" height="20">
                         </div>
                     </form>
                 </div>
@@ -51,4 +49,3 @@
         </div>
     </div>
 </header>
-<h4 align=center>↑バナー部分↑</h4>
