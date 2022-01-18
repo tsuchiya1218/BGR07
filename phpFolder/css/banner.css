@@ -69,16 +69,18 @@ body {
 }
 
 .category_navigation_inner {
-    max-width: 100%;
 }
 
-.category_navigation_list {}
+.category_navigation_list {
+
+}
 
 ul {
     list-style: none;
     margin: 0px;
     padding: 0px;
     height: 45px;
+    overflow: hidden;
 }
 
 li {

@@ -2,11 +2,16 @@
 require "./common/header.php";
 require "./common/banner.php";
 ?>
-
-</br>
-<div style="text-align:center">
-    <img src="./img/TOP_iphone.jpg" width="500" height="300">
-</div>
+<div class="item_flexbox">
+<?php
+for ($i = 1; $i < 9; $i++) {
+    echo <<<EOM
+    <div class="item_content">
+        さんぷる
+    </div>
+    EOM;
+}
+?>
 
 <?php
 require "./common/footer.php";
