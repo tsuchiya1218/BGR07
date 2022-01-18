@@ -76,6 +76,7 @@ body {
 }
 
 ul {
+    display: flex;
     list-style: none;
     margin: 0px;
     padding: 0px;
@@ -84,7 +85,6 @@ ul {
 }
 
 li {
-    display: flex;
     flex-wrap: nowrap;
     justify-content: left;
     float: left;
@@ -98,9 +98,3 @@ li a {
     margin: 0px;
     line-height: 45px;
 }
-
-
-/*そもそもフレキシブルボックス使うのかインライン要素使うのかとか色々やり方合って困る*/
-
-
-/*バナー折り返したくないんだけど下の方謎のまま終わり*/

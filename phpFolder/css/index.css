@@ -1,1 +1,10 @@
 /*商品一覧表示なのでindex.cssからは移す*/
+.item_flexbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item_content{
+    width: 250px;
+}
