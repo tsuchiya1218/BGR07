@@ -3,8 +3,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
 }
 
 .item_content{
     width: 250px;
+    margin: 0px;
+    padding-left: 20px;
 }
