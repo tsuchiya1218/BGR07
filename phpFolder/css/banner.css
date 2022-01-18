@@ -68,14 +68,7 @@ body {
     border-color: grey;
 }
 
-.category_navigation_inner {
-}
-
-.category_navigation_list {
-
-}
-
-ul {
+.category_navigation_list ul {
     display: flex;
     list-style: none;
     margin: 0px;
@@ -84,14 +77,14 @@ ul {
     overflow: hidden;
 }
 
-li {
+.category_navigation_list li {
     flex-wrap: nowrap;
     justify-content: left;
     float: left;
     height: 45px;
 }
 
-li a {
+.category_navigation_list li a {
     display: block;
     padding: 0px 16px;
     height: 45px;

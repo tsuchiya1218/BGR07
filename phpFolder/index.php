@@ -8,7 +8,7 @@ echo "\n".'<div class="item_flexbox">'."\n";
 echo <<<EOM
 <div class="item_content">
     さんぷる1(ここだけ画像リンク)<br>
-    <a href="./detail.php">
+    <a href="./goods_detail.php">
         <img src="./img/case/case1.jpg" width="200" height="200">
     </a>
 </div>\n
