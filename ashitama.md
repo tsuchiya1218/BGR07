@@ -1,0 +1,2 @@
+common.cssの読み込み
+phpをrequireしても本体の方からの相対パスになる？みたい
