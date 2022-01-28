@@ -1,3 +1,3 @@
 <?php
-header('Location: ./cart.php');
+header('Location: ./add_comp.php');
 exit();
