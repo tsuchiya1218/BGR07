@@ -4,7 +4,7 @@ require "./common/banner.php";
 ?>
 //商品購入ボタンを押した際
 <p>
-    こちらの内容で注文を確定し、お支払方法の選択に進みます。<br>
+    こちらの内容で注文の内容を確定し、お届け先の住所の選択に進みます。<br>
     よろしいですか？
 </p>
 <table border='1'>
@@ -21,9 +21,9 @@ require "./common/banner.php";
         <td align=right>&yen;1,100</td>
         </td>
     </tr>
-    <table>
-    <button type="button" onClick="history.back()">戻る</button>
-    <button type="button" onClick="document.location='./order_address.php'">次へ</button>
-        <?php
-        require "./common/footer.php";
-        ?>
+</table>
+<button type="button" onClick="history.back()">戻る</button>
+<button type="button" onClick="document.location='./order_address.php'">配送先選択へ進む</button>
+<?php
+require "./common/footer.php";
+?>
