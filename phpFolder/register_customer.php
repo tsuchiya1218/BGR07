@@ -1,5 +1,5 @@
 <?php
-$page_title = '新規会員登録';
+session_start();
 require "./common/header.php";
 ?>
 <p>お客様の情報を入力してください。</p>

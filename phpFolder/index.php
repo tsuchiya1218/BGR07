@@ -1,10 +1,13 @@
 <?php
+session_start();
 require "./common/header.php";
 require "./common/banner.php";
+require_once "./common/db_connect.php";
+
 ?>
 <link rel="stylesheet" href="./css/index.css">
+<div class="item_flexbox">
 <?php
-echo "\n".'<div class="item_flexbox">'."\n";
 echo <<<EOM
 <div class="item_content">
     さんぷる1(ここだけ画像リンク)<br>

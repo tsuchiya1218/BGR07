@@ -1,5 +1,5 @@
 <?php
-$page_title = '登録内容確認';
+session_start();
 require "./common/header.php";
 ?>
 <hr>

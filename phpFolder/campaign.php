@@ -1,5 +1,5 @@
 <?php
-$page_title = 'キャンペーン';
+session_start();
 require "./common/header.php";
 require "./common/banner.php";
 ?>

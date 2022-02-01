@@ -1,5 +1,5 @@
 <?php
-$page_title = 'パスワード再設定';
+session_start();
 require "./common/header.php";
 ?>
 <p>パスワード再設定</p>
