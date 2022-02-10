@@ -18,15 +18,14 @@ echo <<<EOM
 EOM;
 for ($i = 2; $i < 10; $i++) {
     echo <<<EOM
-        <div class="item_content">
-            さんぷる$i<br>
-            <img src="./img/case/case1.jpg" width="200" height="200">
-        </div>\n
+    <div class="item_content">
+        さんぷる$i<br>
+        <img src="./img/case/case1.jpg" width="200" height="200">
+    </div>\n
     EOM;
 }
 ?>
 </div>
-
 <?php
 require "./common/footer.php";
 ?>
