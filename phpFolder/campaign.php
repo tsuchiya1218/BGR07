@@ -5,10 +5,9 @@ require "./common/banner.php";
 require_once "./common/db_connect.php";
 ?>
 <link rel="stylesheet" href="./css/index.css">
-キャンペーン中の商品を表示<br>
-（DBにキャンペーン中の値を付与し、SQLで検索し表示する）
+<div class="item_flexbox">
 <?php
-$sql = "SELECT Goods.GoodsName,CategoryName,Price,ImgURL,DisRatio
+$sql = "SELECT Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
         FROM Goods
         INNER JOIN Category
         ON Goods.CategoryID = Category.CategoryID
@@ -27,8 +26,10 @@ while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
             </a><br>
             $rec[GoodsName]<br>
             $rec[CategoryName]<br>
-            ￥1100<br>
-            $rec[DisRatio]%引き
+            $rec[Price]<br>
+            $rec[DisRatio]%引き<br>
+            合計価格「$rec[MoreThan]」円以上で500円引き<br>
+            いいね数「$rec[ReviewCount]」
         </div>\n
     EOM;
 }

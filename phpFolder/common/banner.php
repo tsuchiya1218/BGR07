@@ -40,19 +40,19 @@
                     <ul>
                         <li><a href="campaign.php">キャンペーン中</a></li>
                         <li><a href="">セール中</a></li>
-                        <?php
-                        require_once 'db_connect.php';
-
-                        $sql = "SELECT CategoryID,CategoryName
-                                FROM Category
-                                ORDER BY CategoryID ASC";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
-                            echo '<li><a href="search.php?catID=' .
-                                $rec['CategoryID'] . '">' . $rec['CategoryName'] . "</a></li>\n";
-                        }
-                        ?>
+<?php
+require_once 'db_connect.php';
+$sql = "SELECT CategoryID,CategoryName
+        FROM Category
+        ORDER BY CategoryID ASC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
+    echo <<<EOM
+                            <li><a href="search.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
+    EOM;
+}
+?>
                     </ul>
                 </div>
             </div>
