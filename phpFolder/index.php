@@ -27,7 +27,7 @@ require_once "./common/db_connect.php";
     </a><br>
     $rec[GoodsName]<br>
     $rec[CategoryName]<br>
-    $rec[Price]<br>
+    ￥$rec[Price]<br>
     $rec[DisRatio]%引き<br>
     合計価格「$rec[MoreThan]」円以上で500円引き<br>
     いいね数「$rec[ReviewCount]」
