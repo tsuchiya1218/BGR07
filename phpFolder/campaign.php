@@ -8,22 +8,27 @@ require_once "./common/db_connect.php";
 キャンペーン中の商品を表示<br>
 （DBにキャンペーン中の値を付与し、SQLで検索し表示する）
 <?php
-$sql = "SELECT GoodsName,Price,ImgURL
+$sql = "SELECT Goods.GoodsName,CategoryName,Price,ImgURL,DisRatio
         FROM Goods
+        INNER JOIN Category
+        ON Goods.CategoryID = Category.CategoryID
         INNER JOIN Img
         ON Goods.GoodsID = Img.GoodsID
         INNER JOIN Campaign
         ON Goods.CampaignID = Campaign.CampaignID
-        WHERE Price IS NOT NULL";
+        WHERE Goods.CampaignID != 0";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$rec = $stmt->FETCH(PDO::FETCH_BOTH);
 while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
     echo <<<EOM
-     "\n". '<div class="item_flexbox">' . "\n"
         <div class="item_content">
+            <a href="./goods_detail.php">
+                <img src="./img/$rec[ImgURL]" width="200" height="200">
+            </a><br>
             $rec[GoodsName]<br>
-            <img src="./img/$rec[ImgURL]" width="200" height="200">
+            $rec[CategoryName]<br>
+            ￥1100<br>
+            $rec[DisRatio]%引き
         </div>\n
     EOM;
 }
