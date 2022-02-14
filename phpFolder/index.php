@@ -8,7 +8,7 @@ require_once "./common/db_connect.php";
 <link rel="stylesheet" href="./css/index.css">
 <div class="item_flexbox">
     <?php
-    $sql = "SELECT Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
+    $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
             FROM Goods
             INNER JOIN Category
             ON Goods.CategoryID = Category.CategoryID
@@ -22,7 +22,7 @@ require_once "./common/db_connect.php";
     while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
         echo <<<EOM
 <div class="item_content">
-    <a href="./goods_detail.php">
+    <a href="./goods_detail.php?gID=$rec[GoodsID]">
         <img src="./img/$rec[ImgURL]" width="200" height="200">
     </a><br>
     $rec[GoodsName]<br>
