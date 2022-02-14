@@ -2,6 +2,8 @@
 require "./common/header.php";
 require "./common/banner.php";
 ?>
+<script src="./js/order_confirm.js"></script>
+
 <p>
     以下の内容でご注文内容を確定致します。<br>
     よろしければ決済方法の選択に進んでください
@@ -50,7 +52,7 @@ require "./common/banner.php";
     </tr>
 </table>
 <button type="button" onClick="history.back()">戻る</button>
-<button type="button" onClick="document.location='./order_checkout.php'">決済方法の選択に進む</button>
+<button type="button" onClick="checkout()">決済方法の選択に進む</button>
 
 <?php
 require "./common/footer.php";
