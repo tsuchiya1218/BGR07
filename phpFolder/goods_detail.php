@@ -53,14 +53,14 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </tr>
     </table>
     <form action="add_cart.php" method="POST">
-        <select name="quantity">
+        <select name="qty">
             <?php
             for ($i = 1; $i <= 10; $i++) {
                 echo "<option value=$i>{$i}個</option>\n";
             }
             echo <<< EOM
                 </select>
-                    <input type="hidden" name="stock" value=$nf_Stock>
+                    <input type="hidden" name="gID" value=$gID>
                     <input type="submit" value="カートに入れる">
                 EOM;
             ?>
