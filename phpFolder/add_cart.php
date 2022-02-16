@@ -18,7 +18,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if (($row["cnt"] > 0)) {
     //同じ商品番号がある場合、リダイレクトしてエラーメッセージを飛ばす
     $_SESSION['eMsg'] = '既に商品がカートに存在します。';
-    header('Location: goods_detail.php?id=' . $gID);
+    header('Location: goods_detail.php?gID=' . $gID);
     exit();
 }
 
@@ -30,10 +30,16 @@ if ($qty > $stock) {
 }
 */
 
-// カートにデータを挿入するSQL文設定
-$sql = "INSERT INTO Cart(CustomersCode,GoodsID,CartQuantity) VALUES(?,?,?)";
+$sql = "SELECT Price FROM Goods WHERE GoodsID = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($CCode, $gID, $qty));
+$stmt->execute(array($gID));
+$rec = $stmt->FETCH(PDO::FETCH_ASSOC);
+$subTotal = $qty * $rec['Price'];
+
+// カートにデータを挿入するSQL文設定
+$sql = "INSERT INTO Cart(CustomersCode,GoodsID,CartQuantity,SubTotal) VALUES(?,?,?,?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array($CCode, $gID, $qty,$subTotal));
 
 header('Location: ./add_comp.php');
 exit();

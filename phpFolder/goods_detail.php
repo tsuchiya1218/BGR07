@@ -3,7 +3,7 @@ session_start();
 require "./common/header.php";
 require "./common/banner.php";
 require_once "./common/db_connect.php";
-$gID = $_GET['gID'];
+$gID = $_REQUEST['gID'];
 ?>
 <link rel="stylesheet" href="./css/goods_detail.css">
 <?php
@@ -63,6 +63,10 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
                     <input type="hidden" name="gID" value=$gID>
                     <input type="submit" value="カートに入れる">
                 EOM;
+            if(isset($_SESSION['eMsg'])) {
+                echo $_SESSION['eMsg'];
+                unset($_SESSION['eMsg']);
+            }
             ?>
     </form>
 </div>
