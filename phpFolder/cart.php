@@ -74,7 +74,7 @@ if ($row["cnt"] > 0) {
                 </form>
             </td>
             <td align = right>&yen$rec[SubTotal]</td>
-            <td><a href="Delete_Goods.php?gID=$rec[GoodsID]&gName=$rec[GoodsName]">削除</a>
+            <td><a href="delete_goods.php?gID=$rec[GoodsID]&gName=$rec[GoodsName]">削除</a>
             </td>
         </tr>\n
         EOM;
@@ -105,7 +105,7 @@ if ($row["cnt"] > 0) {
             買い物カゴを空にするには右のボタンをクリックしてください。
         </td>
         <td>
-        <form method="POST" action="Delete_All.php">
+        <form method="POST" action="delete_all.php">
             <input type="submit" value="買い物カゴを空にする">
         </form>
         </td>
