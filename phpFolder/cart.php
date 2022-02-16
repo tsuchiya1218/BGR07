@@ -97,7 +97,7 @@ if ($row["cnt"] > 0) {
     <tr>
         <td>商品を注文するには右のボタンをクリックして注文ページに進んでください。</td>
         <td>
-            <input type="button" value="商品を注文する" onClick="document.location='./login.php'">
+            <input type="button" value="商品を注文する" onClick="document.location='./cart_confirm.php'">
         </td>
     </tr>
     <tr>

@@ -56,12 +56,15 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         <select name="qty">
             <?php
             for ($i = 1; $i <= 10; $i++) {
-                echo "<option value=$i>{$i}個</option>\n";
+                if($i==1){
+                    echo "<option value=$i>{$i}個</option>\n";    
+                }
+                echo "            <option value=$i>{$i}個</option>\n";
             }
             echo <<< EOM
-                </select>
-                    <input type="hidden" name="gID" value=$gID>
-                    <input type="submit" value="カートに入れる">
+                        </select>
+                            <input type="hidden" name="gID" value=$gID>
+                            <input type="submit" value="カートに入れる">
                 EOM;
             if(isset($_SESSION['eMsg'])) {
                 echo $_SESSION['eMsg'];
