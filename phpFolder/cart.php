@@ -8,16 +8,13 @@ $CCode = 1;
 ?>
 <?php
 
-
-
-
 $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($CCode));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row["cnt"] > 0) {
     //プリペアードステートメントを使い、商品詳細の表示に必要な情報を取得する
-    $sql = "SELECT CustomersCode,Cart.GoodsID,CartQuantity,GoodsName,CategoryName,
+    $sql = "SELECT CustomersCode,Cart.GoodsID,CartQuantity,SubTotal,GoodsName,CategoryName,
                         Price,ImgURL,ColorName
             FROM Cart
             INNER JOIN Goods
@@ -44,14 +41,12 @@ if ($row["cnt"] > 0) {
         <th></th>
     </tr>\n
     EOM;
-    $totalPrice = 0;
     $totalQuantity = 0;
+    $totalPrice = 0;
     while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
         $nfPrice = number_format($rec['Price']);
         $nfCartQuantity = number_format($rec['CartQuantity']);
         $nfTotalPrice = number_format($totalPrice);
-        $totalPrice = $rec['Price'] * $rec['CartQuantity'];
-        $nfTotalPrice = number_format($totalGoodsPrice);
         echo <<< EOM
         <tr>
             <td>
@@ -78,19 +73,19 @@ if ($row["cnt"] > 0) {
                 <input type="submit" value="変更">
                 </form>
             </td>
-            <td align = right>&yen$nfTotalGoodsPrice</td>
-            <td><a href="Delete_Goods.php?id=$rec[GoodsID]&gname=$rec[GoodsName]">削除</a>
+            <td align = right>&yen$rec[SubTotal]</td>
+            <td><a href="Delete_Goods.php?gID=$rec[GoodsID]&gName=$rec[GoodsName]">削除</a>
             </td>
         </tr>\n
         EOM;
         $totalQuantity += $nfCartQuantity;  
-        $totalPrice += $totalPrice;
+        $totalPrice += $rec['SubTotal'];
     }
     $nfTotalPrice = number_format($totalPrice);
     echo <<< EOM
     <tr>
         <td colspan="2" align = left>合計</td>
-        <td align = right>{$totalQuantity}個</td>
+        <td align = right>合計：{$totalQuantity}点</td>
         <td align = right>&yen;$nfTotalPrice</td>
         <td align = right></td>
     </tr>
