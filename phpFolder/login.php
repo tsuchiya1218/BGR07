@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = 'ログインページ';
 require "./common/header.php";
 ?>
@@ -9,17 +10,17 @@ require "./common/header.php";
 
 <p>メールアドレス・パスワードを入力してください。</p>
 <table>
-    <form method="POST" action="">
+    <form method="POST" action="./check_login.php">
         <tr>
             <td align="right">メールアドレス：</td>
             <td>
-                <input type="text" name="mailaddress" value="">
+                <input type="text" name="mail">
             </td>
         </tr>
         <tr>
             <td align="right">パスワード：</td>
             <td>
-                <input type="password" name="pass" value="">
+                <input type="password" name="pass">
             </td>
         </tr>
         <tr>
@@ -28,6 +29,16 @@ require "./common/header.php";
             </td>
             <td>
                 <input type="submit" value="ログイン">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php
+                if (isset($_SESSION['eMsg'])) {
+                    echo $_SESSION['eMsg'];
+                    unset($_SESSION['eMsg']);
+                }
+                ?>
             </td>
         </tr>
     </form>
