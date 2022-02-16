@@ -7,7 +7,7 @@ $gID = $_GET['gID'];
 ?>
 <link rel="stylesheet" href="./css/goods_detail.css">
 <?php
-$sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,ColorName,DisRatio,MoreThan
+$sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,ColorName,DisRatio,MoreThan,GoodsExplanation
             FROM Goods
             INNER JOIN Category
             ON Goods.CategoryID = Category.CategoryID
@@ -65,12 +65,16 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
                 EOM;
             ?>
     </form>
+    <h4>説明</h4>
+    <p><?=$rec["GoodsExplanation"]?></p>
 </div>
 <h4>注意事項</h4>
 <ul>
     <li>画像は合成イメージです。実際のアイテムとは異なる場合があります。</li>
     <li>ご使用のモニターの設定により、実際のアイテムと色味が異なる場合があります。</li>
 </ul>
+<h4>レビュー数</h4>
+<p><?=$rec["ReviewCount"]?></p>
 
 <?php
 require "./common/footer.php"
