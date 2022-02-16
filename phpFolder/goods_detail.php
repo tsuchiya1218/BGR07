@@ -52,7 +52,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
             <td><?=$rec["CategoryName"]?></td>
         </tr>
     </table>
-    <form action="add_cart.php" method="POST">
+    <form action="check_cart_login.php" method="POST">
         <select name="qty">
             <?php
             for ($i = 1; $i <= 10; $i++) {

@@ -4,8 +4,10 @@ session_start();
 require_once "./common/db_connect.php";
 $sID = session_id();
 $CCode = 1;
-$gID = $_REQUEST['gID'];
-$qty = $_REQUEST['qty'];
+$gID = $_SESSION['gID'];
+unset($_SESSION['gID']);
+$qty = $_SESSION['qty'];
+unset($_SESSION['qty']);
 ?>
 <?php
 //カート内に商品があるかどうかを判断する
