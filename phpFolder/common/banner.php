@@ -23,16 +23,34 @@
                     <img src="./img/cart.png" width="45" height="45">
                 </a>
             </div>
-            <div class="header_login">
-                <a href="./login.php">
-                    <img src="./img/login.png" width="45" height="45">
-                </a>
-            </div>
-            <div class="header_registration">
-                <a href="./register_customer.php">
-                    <img src="./img/registration.png" width="45" height="45">
-                </a>
-            </div>
+            <?php
+            if(isset($_SESSION['cCode'])){
+                echo <<<EOM
+                        <div class="header_login_now">
+                        ようこそ<br>
+                        $_SESSION[cName]さん
+                    </div>
+                    <div class="header_registration">
+                        <a href="./logout.php">
+                            <img src="./img/logout.png" width="45" height="45">
+                        </a>
+                    </div>
+                EOM;
+            }else{
+                echo <<<EOM
+                        <div class="header_login">
+                        <a href="./login.php">
+                            <img src="./img/login.png" width="45" height="45">
+                        </a>
+                    </div>
+                    <div class="header_registration">
+                        <a href="./register_customer.php">
+                            <img src="./img/registration.png" width="45" height="45">
+                        </a>
+                    </div>
+                EOM;
+            }
+            ?>
         </div>
         <div class="category_navigation">
             <div class="category_navigation_inner">
