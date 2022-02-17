@@ -53,7 +53,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </tr>
     </table>
     <form action="check_cart_login.php" method="POST">
-        <select name="qty">
+        <select name="handQty">
             <?php
             for ($i = 1; $i <= 10; $i++) {
                 if($i==1){
@@ -63,7 +63,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
             }
             echo <<< EOM
                         </select>
-                            <input type="hidden" name="gID" value=$gID>
+                            <input type="hidden" name="handGID" value=$gID>
                             <input type="submit" value="カートに入れる">
                 EOM;
             if(isset($_SESSION['eMsg'])) {

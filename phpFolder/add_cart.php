@@ -4,12 +4,12 @@ session_start();
 require_once "./common/db_connect.php";
 $sID = session_id();
 $CCode = 1;
-$gID = $_SESSION['gID'];
-unset($_SESSION['gID']);
-$qty = $_SESSION['qty'];
-unset($_SESSION['qty']);
-?>
-<?php
+
+$gID = $_SESSION['handGID'];
+unset($_SESSION['handGID']);
+$qty = $_SESSION['handQty'];
+unset($_SESSION['handQty']);
+
 //カート内に商品があるかどうかを判断する
 $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ? AND GoodsID = ?";
 $stmt = $pdo->prepare($sql);
@@ -32,16 +32,19 @@ if ($qty > $stock) {
 }
 */
 
+echo "$gID";
+
 $sql = "SELECT Price FROM Goods WHERE GoodsID = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($gID));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
-$subTotal = $qty * $rec['Price'];
-
+if (isset($rec['Price'])) {
+    $subTotal = $qty * $rec['Price'];
+}
 // カートにデータを挿入するSQL文設定
 $sql = "INSERT INTO Cart(CustomersCode,GoodsID,CartQuantity,SubTotal) VALUES(?,?,?,?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($CCode, $gID, $qty,$subTotal));
+$stmt->execute(array($CCode, $gID, $qty, $subTotal));
 
 header('Location: ./add_comp.php');
 exit();

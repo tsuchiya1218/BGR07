@@ -36,7 +36,7 @@
                         </a>
                     </div>
                 EOM;
-            }else{
+            }else if(!isset($_SESSION['cName'])){
                 echo <<<EOM
                         <div class="header_login">
                         <a href="./login.php">

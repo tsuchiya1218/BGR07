@@ -4,13 +4,13 @@ require "./common/header.php";
 require "./common/banner.php";
 require_once "./common/db_connect.php";
 $sID = session_id();
-$CCode = 1;
+$cCode = 1;
 ?>
 <?php
 
 $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($CCode));
+$stmt->execute(array($cCode));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($row["cnt"] > 0) {
     //プリペアードステートメントを使い、商品詳細の表示に必要な情報を取得する
@@ -29,7 +29,7 @@ if ($row["cnt"] > 0) {
             ON Variation.ColorID = Color.ColorID
             WHERE Cart.CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($CCode));
+    $stmt->execute(array($cCode));
 
     echo <<< EOM
     <table border='1'>

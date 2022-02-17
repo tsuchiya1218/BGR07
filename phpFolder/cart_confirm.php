@@ -2,8 +2,6 @@
 session_start();
 require "./common/header.php";
 require "./common/banner.php";
-$CCode = 1;
-
 ?>
 //商品購入ボタンを押した際
 <?php
