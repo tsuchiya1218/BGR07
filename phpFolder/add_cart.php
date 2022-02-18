@@ -3,7 +3,7 @@ session_start();
 //DBの接続部分を読み込む
 require_once "./common/db_connect.php";
 $sID = session_id();
-$CCode = 1;
+// $CCode = 1;
 
 $gID = $_SESSION['handGID'];
 unset($_SESSION['handGID']);
@@ -13,7 +13,7 @@ unset($_SESSION['handQty']);
 //カート内に商品があるかどうかを判断する
 $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ? AND GoodsID = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($CCode, $gID));
+$stmt->execute(array($_SESSION['cCode'], $gID));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
@@ -44,7 +44,7 @@ if (isset($rec['Price'])) {
 // カートにデータを挿入するSQL文設定
 $sql = "INSERT INTO Cart(CustomersCode,GoodsID,CartQuantity,SubTotal) VALUES(?,?,?,?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($CCode, $gID, $qty, $subTotal));
+$stmt->execute(array($_SESSION['cCode'], $gID, $qty, $subTotal));
 
 header('Location: ./add_comp.php');
 exit();
