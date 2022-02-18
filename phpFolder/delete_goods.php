@@ -8,7 +8,7 @@
 
     $sql = "DELETE FROM Cart WHERE CustomersCode = ? AND GoodsID = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($CCode,$gID));
+    $stmt->execute(array($_SESSION['cCode'],$gID));
 
     print "<script>location.replace('./cart.php');</script>";    
 ?>

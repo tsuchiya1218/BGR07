@@ -21,7 +21,7 @@ require "./common/banner.php";
 
     $sql = "SELECT * FROM Cart,Goods WHERE Cart.GoodsID = Goods.GoodsID AND CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($CCode));
+    $stmt->execute(array($_SESSION['cCode']));
 
     while(($rec = $stmt->FETCH(PDO::FETCH_ASSOC))!=null){
 

@@ -1,7 +1,7 @@
 <?php
+session_start();
 require "./common/header.php";
 require "./common/banner.php";
-$CCode = 1;
 ?>
 <p>
     お届け先は以下の住所でよろしいですか？<br>
@@ -23,7 +23,7 @@ $CCode = 1;
 
     $sql = "SELECT * FROM Customers WHERE CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($CCode));
+    $stmt->execute(array($_SESSION['cCode']));
     $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
 
     {
