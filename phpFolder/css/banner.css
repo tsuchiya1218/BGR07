@@ -39,6 +39,13 @@ body {
     margin-right: 10px;
 }
 
+.header_login_now{
+    margin-left: 10px;
+    width: 14%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .search_bar {
     margin: auto;
     margin-left: 5px;
