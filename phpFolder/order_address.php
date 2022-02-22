@@ -14,9 +14,8 @@ require "./common/banner.php";
     <table border='1'>
     <tr>
         <th>郵便番号</th>
-        <th>都道府県</th>
-        <th>市区町村</th>
-        <th>建物名</th>
+        <th>都道府県・市区町村</th>
+        <th>町名・番地以下・建物名</th>
         <th></th>
     </tr>\n
     EOM;
@@ -30,19 +29,10 @@ require "./common/banner.php";
         echo "<tr><td class = >" . $rec['CustomersZip'] . "</td>";
         echo "<td class = >" . $rec['CustomersAddress1'] . "</td>";
         echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
-        echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
         echo "<td><input type=\"button\" value=\"変更する\"></td></tr>\n";
         
     }
 ?>
-
-    <tr>
-        <td>100-0001</td>
-        <td>東京都</td>
-        <td>千代田区千代田一丁目一番地</td>
-        <td>皇居</td>
-        <td><input type="button" value="変更する"></td>
-    </tr>
 </table>
 <button type="button" onClick="history.back()">戻る</button>
 <button type="button" onClick="document.location='./order_confirm.php'">お支払い手続きに進む</button>

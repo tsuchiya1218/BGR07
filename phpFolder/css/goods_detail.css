@@ -1,9 +1,13 @@
 .goods_left {
     display: inline-block;
-    width: 300px;
+    width: 350px;
     margin: 0px;
+    padding: 30px;
     position: relative;
     left: 20px;
+}
+.goods_left img{
+    text-align: center;
 }
 
 .goods_right {
@@ -12,8 +16,10 @@
     position: relative;
     left: 50px;
     margin: 0px;
+    margin-top: 20px;
     border: 1px solid;
     padding: 20px;
+    width: 450px;
 }
 
 .price {

@@ -34,10 +34,11 @@ if ($qty > $stock) {
 
 echo "$gID";
 
-$sql = "SELECT Price FROM Goods WHERE GoodsID = ?";
+$sql = "SELECT GoodsName,Price FROM Goods WHERE GoodsID = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($gID));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
+$gName = $rec['GoodsName'];
 if (isset($rec['Price'])) {
     $subTotal = $qty * $rec['Price'];
 }
@@ -45,6 +46,9 @@ if (isset($rec['Price'])) {
 $sql = "INSERT INTO Cart(CustomersCode,GoodsID,CartQuantity,SubTotal) VALUES(?,?,?,?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($_SESSION['cCode'], $gID, $qty, $subTotal));
+
+$_SESSION["msg"] = "商品名:{$gName}を{$qty}個カートに追加しました<br>
+カートの中を見るには<a href =\"./cart.php'\">こちら</a>";
 
 header('Location: ./add_comp.php');
 exit();

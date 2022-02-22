@@ -3,7 +3,6 @@
 
 	//DBの接続部分を読み込む
 	require_once './common/db_connect.php';
-    $CCode = 1;
 	$gID = $_GET['gID'];
 
     $sql = "DELETE FROM Cart WHERE CustomersCode = ? AND GoodsID = ?";

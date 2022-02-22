@@ -26,7 +26,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
 ?>
 <div class="goods_left">
     <img src="./img/<?=$rec["ImgURL"]?>" width="280" height="300">
-    ↓ここに別の画像を数枚表示↓<br>
+    <br>↓ここに別の画像を数枚表示↓<br>
     　□　□　□　□<br>
     ↑ここに別の画像を数枚表示↑
 

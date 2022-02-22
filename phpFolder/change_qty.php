@@ -2,14 +2,12 @@
 session_start();
 //DBの接続部分を読み込む
 require_once "./common/db_connect.php";
-$sid = session_id();
 $gID = $_REQUEST['gID'];
 $gName = $_REQUEST['gName'];
 $qty = $_REQUEST['changeQty'];
-// $CCode = 1;
 ?>
 <?php
-// カートのデータを削除するSQL文設定
+// カートの個数を変更する
 $sql = "UPDATE Cart SET CartQuantity = ? 
         WHERE CustomersCode = ? AND GoodsID = ?";
 $stmt = $pdo->prepare($sql);

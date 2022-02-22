@@ -2,32 +2,46 @@
 session_start();
 require "./common/header.php";
 require "./common/banner.php";
+require_once "./common/db_connect.php";
+
 ?>
 <link rel="stylesheet" href="./css/index.css">
-//商品追加完了のメッセージを表示する画面（add_cart.phpから遷移）
 <?php
-echo '<p>[商品名]をカートに追加しました</p>';
-echo '以下の商品もおすすめです</p>';
-
-echo "\n".'<div class="item_flexbox">'."\n";
-echo <<<EOM
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+    }
+?>
+<div class="item_flexbox">
+    <?php
+    $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
+            FROM Goods
+            INNER JOIN Category
+            ON Goods.CategoryID = Category.CategoryID
+            INNER JOIN Img
+            ON Goods.GoodsID = Img.GoodsID
+            INNER JOIN Campaign
+            ON Goods.CampaignID = Campaign.CampaignID
+            ORDER BY Goods.ReviewCount DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
+        echo <<< EOM
 <div class="item_content">
-    さんぷる1(ここだけ画像リンク)<br>
-    <a href="./goods_detail.php">
-        <img src="./img/case/case1.jpg" width="200" height="200">
-    </a>
+    <a href="./goods_detail.php?gID=$rec[GoodsID]">
+        <img src="./img/$rec[ImgURL]" width="200" height="200">
+    </a><br>
+    $rec[GoodsName]<br>
+    $rec[CategoryName]<br>
+    ￥$rec[Price]<br>
+    $rec[DisRatio]%引き<br>
+    合計価格「$rec[MoreThan]」円以上で500円引き<br>
+    いいね数「$rec[ReviewCount]」
 </div>\n
 EOM;
-for ($i = 2; $i < 10; $i++) {
-    echo <<<EOM
-        <div class="item_content">
-            さんぷる$i<br>
-            <img src="./img/case/case1.jpg" width="200" height="200">
-        </div>\n
-    EOM;
-}
-?>
+    }
+    ?>
 </div>
 <?php
-require "./common/footer.php"
+require "./common/footer.php";
 ?>
