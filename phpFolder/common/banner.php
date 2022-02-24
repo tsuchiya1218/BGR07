@@ -69,7 +69,7 @@
                             while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
                                 echo <<<EOM
                             <li><a href="search.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
-    EOM;
+                            EOM;
                             }
                             ?>
                         </ul>
