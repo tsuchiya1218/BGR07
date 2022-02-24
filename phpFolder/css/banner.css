@@ -125,8 +125,6 @@ nav a{
 	padding				:	5px 15px;
 	/*アニメーションの追加(背景色を1.5秒後に緩やかに変化)*/
 	transition			:	background-color 1.5s ease;
-	/* 上だけ実線(太さ：5px、色：#ff1493)のスタイル設定する */
-	border-top			:	5px solid #ff0000;
 	/* 文字の大きさを20pxに設定する */
 	font-size			:	15px;
 }
