@@ -29,8 +29,7 @@ require "./common/banner.php";
         echo "<tr><td class = >" . $rec['CustomersZip'] . "</td>";
         echo "<td class = >" . $rec['CustomersAddress1'] . "</td>";
         echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
-        echo "<td><input type=\"button\" value=\"変更する\"></td></tr>\n";
-        
+        echo "<td><input type=\"button\" onClick=\"document.location='./order_confirm.php'"></td></tr>\n";
     }
 ?>
 </table>

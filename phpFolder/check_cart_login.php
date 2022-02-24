@@ -4,7 +4,7 @@ $motourl = $_SERVER['HTTP_REFERER'];
 if(isset($_POST['handGID'])){
     $_SESSION['handGID'] = $_POST['handGID'];    
 }
-if(isset($_POST['handGID'])){
+if(isset($_POST['handQty'])){
     $_SESSION['handQty'] = $_POST['handQty'];    
 }
 

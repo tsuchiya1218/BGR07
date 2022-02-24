@@ -3,7 +3,6 @@ session_start();
 require "./common/header.php";
 require "./common/banner.php";
 ?>
-//商品購入ボタンを押した際
 <?php
     $totalPrice = 0;
     $totalAmount = 0;
@@ -15,11 +14,23 @@ require "./common/banner.php";
         <th>単価</th>
         <th>個数</th>
         <th>金額</th>
-        <th></th>
     </tr>\n
     EOM;
 
-    $sql = "SELECT * FROM Cart,Goods WHERE Cart.GoodsID = Goods.GoodsID AND CustomersCode = ?";
+    $sql = "SELECT CustomersCode,Cart.GoodsID,CartQuantity,SubTotal,GoodsName,CategoryName,
+                            Price,ImgURL,ColorName
+            FROM Cart
+            INNER JOIN Goods
+            ON Cart.GoodsID = Goods.GoodsID
+            INNER JOIN Category
+            ON Goods.CategoryID = Category.CategoryID
+            INNER JOIN Img
+            ON Goods.GoodsID = Img .GoodsID
+            INNER JOIN Variation
+            ON Goods.GoodsID = Variation.GoodsID
+            INNER JOIN Color
+            ON Variation.ColorID = Color.ColorID
+            WHERE Cart.CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array($_SESSION['cCode']));
 
@@ -28,12 +39,11 @@ require "./common/banner.php";
         $GoodsID = $rec['GoodsID'];
         $CartAmount = $rec['CartQuantity'];
 
-        echo "<tr><td class = >" . $rec['GoodsName'] . "</td>";
+        echo "<tr><td class = >" . $rec['GoodsName'] .'<br>'. 
+        "<img src=\"./img/$rec[ImgURL]\" width=\"200\" height=\"200\"></td>";
         echo "<td class = >￥" . number_format(floor($rec['Price'])) . "</td>";
         echo "<td class = >" . number_format(floor($rec['CartQuantity'])) . "個</td>";
         echo "<td class = >￥" . number_format($rec['Price']*$rec['CartQuantity'])  . "</td>";
-        echo "<td><a href=\"./delete_goods.php?gID=". $rec['GoodsID'] ."\">削除</a></td></tr>\n";
-        
         $totalPrice += $rec['Price']*$rec['CartQuantity'];
         $totalAmount += $rec['CartQuantity'];
 
@@ -42,7 +52,6 @@ require "./common/banner.php";
         echo "<tr><td colspan=\"2\">合計</td>";
         echo "<td class = >" . number_format($totalAmount) . "個</td>";
         echo "<td class = >¥". number_format($totalPrice) ."</td>";
-        echo "<td>&nbsp;</td>";
         echo "</table><br>\n";
 
 

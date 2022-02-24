@@ -24,7 +24,7 @@
                 </a>
             </div>
             <?php
-            if(isset($_SESSION['cCode'])){
+            if (isset($_SESSION['cCode'])) {
                 echo <<<EOM
                         <div class="header_login_now">
                         ようこそ<br>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                 EOM;
-            }else if(!isset($_SESSION['cName'])){
+            } else if (!isset($_SESSION['cName'])) {
                 echo <<<EOM
                         <div class="header_login">
                         <a href="./login.php">
@@ -52,28 +52,30 @@
             }
             ?>
         </div>
-        <div class="category_navigation">
-            <div class="category_navigation_inner">
-                <div class="category_navigation_list">
-                    <ul>
-                        <li><a href="campaign.php">キャンペーン中</a></li>
-                        <li><a href="">セール中</a></li>
-<?php
-require_once 'db_connect.php';
-$sql = "SELECT CategoryID,CategoryName
-        FROM Category
-        ORDER BY CategoryID ASC";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
-    echo <<<EOM
+        <nav>
+            <div class="category_navigation">
+                <div class="category_navigation_inner">
+                    <div class="category_navigation_list">
+                        <ul>
+                            <li><a href="campaign.php">キャンペーン中</a></li>
+                            <li><a href="">セール中</a></li>
+                            <?php
+                            require_once 'db_connect.php';
+                            $sql = "SELECT CategoryID,CategoryName
+                                    FROM Category
+                                    ORDER BY CategoryID ASC";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->execute();
+                            while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
+                                echo <<<EOM
                             <li><a href="search.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
     EOM;
-}
-?>
-                    </ul>
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
 </header><?= "\n" ?>
