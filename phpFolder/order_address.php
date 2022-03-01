@@ -9,8 +9,7 @@ require "./common/banner.php";
     よろしければお支払方法の選択に進みます
 </p>
 <?php
-
-    echo <<< EOM
+echo <<< EOM
     <table border='1'>
     <tr>
         <th>郵便番号</th>
@@ -18,19 +17,25 @@ require "./common/banner.php";
         <th>町名・番地以下・建物名</th>
         <th></th>
     </tr>\n
-    EOM;
+EOM;
 
-    $sql = "SELECT * FROM Customers WHERE CustomersCode = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($_SESSION['cCode']));
-    $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
+$sql = "SELECT * FROM Customers WHERE CustomersCode = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array($_SESSION['cCode']));
+$rec = $stmt->FETCH(PDO::FETCH_ASSOC);
+$zip1    = substr($rec['CustomersZip'], 0, 3);
+$zip2    = substr($rec['CustomersZip'], 3);
 
-    {
-        echo "<tr><td class = >" . $rec['CustomersZip'] . "</td>";
-        echo "<td class = >" . $rec['CustomersAddress1'] . "</td>";
-        echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
-        echo "<td><input type=\"button\" onClick=\"document.location='./order_confirm.php'"></td></tr>\n";
-    }
+echo "<tr><td class = >" . $zip1 . '-' . $zip2 . "</td>";
+echo "<td class = >" . $rec['CustomersAddress1'] . "</td>";
+echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
+echo "<td><input type=\"button\" value=\"変更する\"
+            onClick=\"document.location='./change_address.php'\"></td></tr>\n";
+if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
+
 ?>
 </table>
 <button type="button" onClick="history.back()">戻る</button>
