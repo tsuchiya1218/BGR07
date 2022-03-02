@@ -10,7 +10,7 @@ if ($_POST['word'] == '') {
 }
 $word = '%' . $_POST['word'] . '%';
 ?>
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/display_contents.css">
 <?php
 $sql = "SELECT COUNT(*) AS cnt 
             FROM Goods

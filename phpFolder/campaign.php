@@ -4,7 +4,7 @@ require "./common/header.php";
 require "./common/banner.php";
 require_once "./common/db_connect.php";
 ?>
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/display_contents.css">
 <div class="item_flexbox">
 <?php
 $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
