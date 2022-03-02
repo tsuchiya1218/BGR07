@@ -4,7 +4,6 @@ require "./common/header.php";
 require "./common/banner.php";
 require "./common/db_connect.php";
 ?>
-<script src="./js/order_confirm.js"></script>
 
 <p>
     以下の内容でご注文内容を確定致します。<br>
@@ -111,6 +110,18 @@ EOM;
 <button type="button" onClick="history.back()">戻る</button>
 <button type="button" onClick="checkout()">決済方法の選択に進む</button>
 
+<script>
+function checkout(){
+    var gokei =  <?php echo $totalPrice; ?>;
+
+    if(confirm( "合計金額は　"+ gokei +"　円です。よろしいですか？")==true){
+        location.href="./order_checkout.php";
+    }
+    else{
+        return;
+    }
+}
+</script>
 <?php
 require "./common/footer.php";
 ?>

@@ -16,14 +16,14 @@ function choice(){
 
     if(checked[0].checked == true){
         if(confirm( "お支払方法は　クレジットカード決済です。よろしいですか？")==true){
-            location.href="./order_comp.php";
+            location.href="./order_credit.php";
         }
         else{
             return;
         }
     }else if(checked[1].checked == true){
         if(confirm( "お支払方法は　コンビニ決済です。よろしいですか？")==true){
-            location.href="./order_comp.php";
+            location.href="./order_conbini.php";
         }
         else{
             return;

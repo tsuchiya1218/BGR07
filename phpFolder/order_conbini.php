@@ -12,13 +12,13 @@ require "./common/banner.php";
 <link rel="stylesheet" href="./css/popup.css">
 <div class="popup" id="js-popup">
   <div class="popup-inner">
-        <p>支払い方法を選択してください</p>
-        <form>
-            <input type="radio" name="checkout">クレジットカード決済<br>
-            <input type="radio" name="checkout">コンビニ支払い<br>
-            </br>
-            <button type="button" onClick="choice()">支払い情報入力</button>
-        </form>
+    <form action="order_comp.php" method="POST">
+            <p>受付方法：（コンビニ払い）</p>
+            <p>近くの８TWELVEのコンビニにて決済お願い致します。</p>
+            <img src="./img/conbiniISBN.png">
+            <p>お客番号：1234-1234-1234</p>
+            <input type="submit" value="決済">
+    </form>
     <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
   </div>
   <div class="black-background" id="js-black-bg"></div>
