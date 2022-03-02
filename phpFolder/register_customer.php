@@ -1,20 +1,25 @@
 <?php
 session_start();
+//DBの接続部分を読み込む
 require "./common/header.php";
+require_once "./common/db_connect.php";
 ?>
+<div style="text-align:center">
+    <a href="./index.php"><img src="./img/Banner.png" width="500" height="150"></a>
+</div>
 <p>お客様の情報を入力してください。</p>
 <hr>
 <p>以下のフォームにデータを入力し、「次へ>>」ボタンを押してください。</p>
 <p>*が付いている項目は必須項目です</p>
 <table>
-    <form method="POST" action="./register_check.php">
+    <form method="POST" action="check_customer.php">
         <tr>
             <td align="right" valign="top">*お名前：</td>
             <td>
                 <input type="text" size="20" name="name" value="" placeholder="例:日本 電子" maxlength="30">
                 <?php
                 if (isset($_SESSION['eMsg']['name'])) {
-                    echo '<br>'. $_SESSION['eMsg']['name'];
+                    echo '<br>' . $_SESSION['eMsg']['name'];
                     unset($_SESSION['eMsg']['name']);
                 }
                 ?>
@@ -26,7 +31,7 @@ require "./common/header.php";
                 <input type="text" size="60" name="address" value="" placeholder="例:東京都新宿区百人町1-25-4 日本電子ビル 6F 161号室">
                 <?php
                 if (isset($_SESSION['eMsg']['address'])) {
-                    echo '<br>'. $_SESSION['eMsg']['address'];
+                    echo '<br>' . $_SESSION['eMsg']['address'];
                     unset($_SESSION['eMsg']['address']);
                 }
                 ?>
@@ -38,7 +43,7 @@ require "./common/header.php";
                 <input type="tel" size="20" name="tel" value="" placeholder="例:03-3369-xxxx" maxlength="20">
                 <?php
                 if (isset($_SESSION['eMsg']['tel'])) {
-                    echo '<br>'. $_SESSION['eMsg']['tel'];
+                    echo '<br>' . $_SESSION['eMsg']['tel'];
                     unset($_SESSION['eMsg']['tel']);
                 }
                 ?>
@@ -50,7 +55,7 @@ require "./common/header.php";
                 <input type="email" size="40" name="email" value="" placeholder="例:denshi@nichiden.com">
                 <?php
                 if (isset($_SESSION['eMsg']['email'])) {
-                    echo '<br>'. $_SESSION['eMsg']['email'];
+                    echo '<br>' . $_SESSION['eMsg']['email'];
                     unset($_SESSION['eMsg']['email']);
                 }
                 ?>
@@ -62,7 +67,7 @@ require "./common/header.php";
                 <input type="password" name="pass" size="20" minlength="6" maxlength="20">
                 <?php
                 if (isset($_SESSION['eMsg']['pass'])) {
-                    echo '<br>'. $_SESSION['eMsg']['pass'];
+                    echo '<br>' . $_SESSION['eMsg']['pass'];
                     unset($_SESSION['eMsg']['pass']);
                 }
                 ?>
@@ -74,7 +79,7 @@ require "./common/header.php";
                 <input type="password" name="pass2" size="20" minlength="6" maxlength="20">
                 <?php
                 if (isset($_SESSION['eMsg']['pass2'])) {
-                    echo '<br>'. $_SESSION['eMsg']['pass2'];
+                    echo '<br>' . $_SESSION['eMsg']['pass2'];
                     unset($_SESSION['eMsg']['pass2']);
                 }
                 ?>
@@ -89,7 +94,10 @@ require "./common/header.php";
         </tr>
     </form>
 </table>
+<?php
 
+
+?>
 <?php
 require "./common/footer.php";
 ?>

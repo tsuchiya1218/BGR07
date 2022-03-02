@@ -1,6 +1,5 @@
 <?php
 session_start();
-$page_title = 'ログインページ';
 require "./common/header.php";
 ?>
 

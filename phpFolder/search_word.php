@@ -39,7 +39,22 @@ if ($row['cnt'] == 0) {
     $flag = false;
     while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
         while ($flag == false) {
-            echo "「" . $_POST['word'] . "」に関する検索結果が".' [カウントうまくできないんだけど]件見つかりました。<br>';
+            $sql = "SELECT COUNT(Goods.GoodsID) cnt
+            FROM Goods
+            INNER JOIN Category
+            ON Goods.CategoryID = Category.CategoryID
+            INNER JOIN Img
+            ON Goods.GoodsID = Img.GoodsID
+            INNER JOIN Campaign
+            ON Goods.CampaignID = Campaign.CampaignID
+            WHERE Goods.GoodsName LIKE ?
+            OR GoodsExplanation LIKE ?
+            OR Category.CategoryName LIKE ?
+            ORDER BY Goods.ReviewCount DESC";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array($word, $word, $word));
+            $row = $stmt->FETCH(PDO::FETCH_ASSOC);
+            echo "「" . $_POST['word'] . "」に関する検索結果が" . $row['cnt'].'件見つかりました。<br>';
             echo '<div class="item_flexbox">';
             $flag = true;
         }
