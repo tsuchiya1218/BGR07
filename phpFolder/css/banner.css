@@ -131,9 +131,9 @@ nav a:visited {
 
 /*アニメーション終了後のスタイル*/
 nav a:hover {
-	/* 文字色をwhiteに設定する */
+	/* 文字色を設定する */
 	color				:	white;
-	/*背景色を#ff1493に設定する */
+	/*背景色を設定する */
 	background-color	:	#ff0000;
 }
 nav a{
@@ -141,10 +141,12 @@ nav a{
 	display				:	block;
 	/* リンクの下線を削除する */
 	text-decoration		:	none;
-	/* 内側の余白を上下は10px,左右は15pxに設定する */
-	padding				:	5px 15px;
-	/*アニメーションの追加(背景色を1.5秒後に緩やかに変化)*/
+	/* 内側の余白を上下左右設定する */
+	padding				:	5px 10px;
+	/*アニメーションの追加*/
 	transition			:	background-color 1.5s ease;
-	/* 文字の大きさを20pxに設定する */
-	font-size			:	15px;
+	/* 文字の大きさを設定する */
+	font-size			:	26px;
+
+    font-family         : "serif";
 }
