@@ -3,82 +3,44 @@
 session_start();
 require_once './common/db_connect.php';
 //チェック用変数
-$ErrorCheck = true;
-//名前
-if (!empty($_REQUEST['zip'])) {
-    $zip = $_REQUEST['zip'];
-} else {
-    $_SESSION['eMsg']['zip'] = '郵便番号を入力してください。';
-    $ErrorCheck = false;
-}
-//住所
-if (!empty($_REQUEST['address1'])) {
-    $address1 = $_REQUEST['address1'];
-} else {
-    $_SESSION['eMsg']['address1'] = '>都道府県・市区町村名を入力してください。';
-    $ErrorCheck = false;
-}
-//
-if (!empty($_REQUEST['address2'])) {
-    $address1 = $_REQUEST['address2'];
-} else {
-    $_SESSION['eMsg']['address2'] = '>町名・番地以下・建物名を入力してください。';
-    $ErrorCheck = false;
-    }
-}
-//メールアドレス
-if (!empty($_REQUEST['email'])) {
-    if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $_REQUEST['email'])) {
-        $email = $_REQUEST['email'];
-        $sql = "SELECT COUNT(*) AS cnt FROM Customer WHERE EMail = ?";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(array($email));
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (($row["cnt"] > 0)) {
-            $_SESSION['eMsg']['email'] = '登録されていないメールアドレスを入力してください。';
-        }
+$errorCheck = true;
+if (!empty($_POST['zip'])) {
+    if (preg_match('/^([0-9]{7})$/', $_POST['zip'])) {
+        $zip = $_POST['zip'];
     } else {
-        $_SESSION['eMsg']['email'] = 'メールアドレスが正しくありません。';
-        $ErrorCheck = false;
+        $_SESSION['eMsg']['zip'] = '郵便番号は数字のみ、7桁で入力してください';
+        $errorCheck = false;
     }
 } else {
-    $_SESSION['eMsg']['email'] = 'メールアドレスを入力してください。';
-    $ErrorCheck = false;
+    $_SESSION['eMsg']['zip'] = '郵便番号を入力してください';
+    $errorCheck = false;
 }
-//パスワード
-if (!empty($_REQUEST['pass'])) {
-    if(preg_match("/^[a-zA-Z0-9]{6,30}$/",$_REQUEST['pass'])){
-        $pass = $_REQUEST['pass'];
-    }else{
-        $_SESSION['eMsg']['pass'] = 'パスワードは英数字6文字以上30字以内で入力してください';
-        $ErrorCheck = false;
-    }
+//住所1
+if (!empty($_POST['address1'])) {
+    $address1 = $_POST['address1'];
 } else {
-    $_SESSION['eMsg']['pass'] = 'パスワードを入力してください';
-    $ErrorCheck = false;
+    $_SESSION['eMsg']['address1'] = '都道府県・市区町村名を入力してください。';
+    $errorCheck = false;
 }
-//パスワード（確認用）
-if (!empty($_REQUEST['pass2'])) {
-    $pass2 = $_REQUEST['pass2'];
-    //パスワード照合
-    if ($_REQUEST['pass'] != ($_REQUEST['pass2'])) {
-        $_SESSION['eMsg']['pass'] = 'パスワード(確認用)と一致しません入力し直してください。';
-        $ErrorCheck = false;
-    }
+//住所2
+if (!empty($_POST['address2'])) {
+    $address2 = $_POST['address2'];
 } else {
-    $_SESSION['eMsg']['pass2'] = 'パスワード（確認用）を入力してください';
-    $ErrorCheck = false;
+    $_SESSION['eMsg']['address2'] = '町名・番地以下・建物名を入力してください。';
+    $errorCheck = false;
 }
 
-if ($ErrorCheck == false) {
+if ($errorCheck == false) {
     header('Location: ./change_address.php');
     exit();
-} else if ($ErrorCheck == true) {
-    $_SESSION['changeAddress'] = [
-        'zip' => $zip,
-        'address1' => $address1,
-        'address2' => $address2,
-    ];
-    header('Location: confirm_customer.php');
+} else if ($errorCheck == true) {
+    $_SESSION['msg'] = '住所の変更が正常に完了しました。<br>
+                        下記の戻るボタンから配送先の確認画面へお戻りください。';
+    $sql = "UPDATE Customers 
+            SET CustomersZip = ?,CustomersAddress1 = ?,CustomersAddress2 =  ?
+            WHERE CustomersCode = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array($zip,$address1,$address2,$_SESSION['cCode']));
+    header('Location: ./change_address.php');
     exit();
 }

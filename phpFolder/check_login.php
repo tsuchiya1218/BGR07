@@ -26,7 +26,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute(array($mail, $pass));
 $row = $stmt->FETCH(PDO::FETCH_ASSOC);
 
-if (($row["cnt"] == 0)) {
+if ($row["cnt"] == 0){
     $_SESSION['eMsg'] = '登録されていないメールアドレス、もしくは無効なパスワードです。';
     header('Location: ./login.php');
     exit();

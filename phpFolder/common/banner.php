@@ -10,10 +10,10 @@
             </div>
             <div class="header_spacer">
                 <div class="search_bar">
-                    <form action="" method="POST">
-                        <input type="text" class="search_text" placeholder="検索">
+                    <form action="./search_word.php" method="POST">
+                        <input type="text" class="search_text" name="word" placeholder="検索">
                         <div class="search_button">
-                            <input type="image" src="./img/search.png" class="search_button" width="20" height="20">
+                            <input type="image" src="./img/search.png" width="20" height="20">
                         </div>
                     </form>
                 </div>
@@ -68,7 +68,7 @@
                             $stmt->execute();
                             while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
                                 echo <<<EOM
-                            <li><a href="search.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
+                            <li><a href="search_category.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
                             EOM;
                             }
                             ?>
