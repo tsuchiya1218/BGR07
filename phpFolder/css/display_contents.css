@@ -13,6 +13,9 @@
 }
 .se-ru_images{
     position        : absolute;
-    left            : 100px;
-    top             : 80px;
+    left            : 20px;
+    top             : 10px;
 }
+/*<div class="se-ru_images">
+	 <img src="./images/se-ru.png">
+</div>
