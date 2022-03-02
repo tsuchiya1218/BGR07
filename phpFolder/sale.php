@@ -3,20 +3,20 @@ session_start();
 require "./common/header.php";
 require "./common/banner.php";
 require_once "./common/db_connect.php";
-
 ?>
 <link rel="stylesheet" href="./css/display_contents.css">
 <div class="item_flexbox">
     <?php
     $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan,Goods.CampaignID
-            FROM Goods
-            INNER JOIN Category
-            ON Goods.CategoryID = Category.CategoryID
-            INNER JOIN Img
-            ON Goods.GoodsID = Img.GoodsID
-            INNER JOIN Campaign
-            ON Goods.CampaignID = Campaign.CampaignID
-            ORDER BY Goods.ReviewCount DESC";
+        FROM Goods
+        INNER JOIN Category
+        ON Goods.CategoryID = Category.CategoryID
+        INNER JOIN Img
+        ON Goods.GoodsID = Img.GoodsID
+        INNER JOIN Campaign
+        ON Goods.CampaignID = Campaign.CampaignID
+        WHERE Campaign.CampaignID >=200
+        ";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
@@ -58,7 +58,6 @@ require_once "./common/db_connect.php";
         }
     }
     ?>
-</div>
-<?php
-require "./common/footer.php";
-?>
+    <?php
+    require "./common/footer.php";
+    ?>

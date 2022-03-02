@@ -60,7 +60,7 @@
                     <div class="category_navigation_list">
                         <ul>
                             <li><a href="campaign.php">キャンペーン中</a></li>
-                            <li><a href="">セール中</a></li>
+                            <li><a href="sale.php">セール中</a></li>
                             <?php
                             require_once 'db_connect.php';
                             $sql = "SELECT CategoryID,CategoryName
