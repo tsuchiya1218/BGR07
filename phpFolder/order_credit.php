@@ -6,10 +6,8 @@ require "./common/banner.php";
 
 <script src="./js/popup.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-
-
-
 <link rel="stylesheet" href="./css/popup.css">
+
 <div class="popup" id="js-popup">
   <div class="popup-inner">
         <p>お支払いを完了してください</p>
