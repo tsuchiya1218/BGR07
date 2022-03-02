@@ -15,7 +15,7 @@ body {
 .header_row {
     position: relative;
     top: 0px;
-    height: 45px;
+    height: 60px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@ body {
 .header_brand a {
     /*a要素がはみ出る、他のも修正してほしい*/
     display: block;
-    height: 45px;
+    height: 60px;
 }
 
 .header_spacer {
@@ -38,12 +38,25 @@ body {
     display: flex;
     margin-right: 10px;
 }
+.cart{
+    margin: 0px
+}
 
 .header_login_now{
-    margin-left: 10px;
-    width: 14%;
+    font-family: 'Caveat', cursive;
+    width: 20%;
     display: flex;
     justify-content: space-evenly;
+}
+.header_login_now_text{
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    width: 90%;
+    padding: 7px 10px;
+}
+
+.header_logout{
+    padding: 5px 5px;
 }
 
 .search_bar {
@@ -56,21 +69,23 @@ body {
 .search_text {
     float: left;
     width: 100%;
-    height: 25px;
+    height: 40px;
+    font-size: 20px;
 }
 
 .search_button {
     float: left;
     position: absolute;
     /*何もしないでabsoluteだとページ全体からになるけど、親要素がrelativeだと親要素からになる*/
+    height: 20px;
     right: 0px;
-    top: 3px;
+    top: 8px;
 }
 
 .category_navigation {
     display: flex;
     width: 100%;
-    height: 45px;
+    height: 60px;
     border-bottom: 1px solid;
     border-color: grey;
 }
@@ -80,7 +95,7 @@ body {
     list-style: none;
     margin: 0px;
     padding: 0px;
-    height: 45px;
+    height: 60px;
     overflow: hidden;
 }
 
@@ -88,15 +103,16 @@ body {
     flex-wrap: nowrap;
     justify-content: left;
     float: left;
-    height: 45px;
+    height: 60px;
 }
 
 .category_navigation_list li a {
     display: block;
     padding: 0px 16px;
-    height: 45px;
+    height: 60px;
     margin: 0px;
-    line-height: 45px;
+    line-height: 60px;
+    font-size: 17px;
 }
 nav a:link {
 	/* 文字色を#3c454dに設定する */

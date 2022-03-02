@@ -5,7 +5,7 @@
             <div class="header_brand">
                 <a href="./index.php">
                     <!-- BannerIMG -->
-                    <img src="./img/Banner.png" width="150" height="45">
+                    <img src="./img/Banner.png" width="200" height="60">
                 </a>
             </div>
             <div class="header_spacer">
@@ -13,39 +13,41 @@
                     <form action="./search_word.php" method="POST">
                         <input type="text" class="search_text" name="word" placeholder="検索">
                         <div class="search_button">
-                            <input type="image" src="./img/search.png" width="20" height="20">
+                            <input type="image" src="./img/search.png" width="30" height="30">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="cart">
                 <a href="./cart.php">
-                    <img src="./img/cart.png" width="45" height="45">
+                    <img src="./img/cart.png" width="60" height="60">
                 </a>
             </div>
             <?php
             if (isset($_SESSION['cCode'])) {
                 echo <<<EOM
-                        <div class="header_login_now">
-                        ようこそ<br>
-                        $_SESSION[cName]さん
-                    </div>
-                    <div class="header_registration">
-                        <a href="./logout.php">
-                            <img src="./img/logout.png" width="45" height="45">
-                        </a>
-                    </div>
+                <div class="header_login_now">
+                                <div class="header_login_now_text">    
+                                    ようこそ<br>
+                                    $_SESSION[cName]さん
+                                </div>
+                            </div>
+                            <div class="header_logout">
+                                <a href="./logout.php">
+                                    <img src="./img/logout.png" width="50" height="50">
+                                </a>
+                            </div>\n
                 EOM;
             } else if (!isset($_SESSION['cName'])) {
                 echo <<<EOM
                         <div class="header_login">
-                        <a href="./login.php">
-                            <img src="./img/login.png" width="45" height="45">
-                        </a>
+                            <a href="./login.php">
+                                <img src="./img/login.png" width="60" height="60">
+                            </a>
                     </div>
                     <div class="header_registration">
                         <a href="./register_customer.php">
-                            <img src="./img/registration.png" width="45" height="45">
+                            <img src="./img/registration.png" width="60" height="60">
                         </a>
                     </div>
                 EOM;
@@ -66,10 +68,15 @@
                                     ORDER BY CategoryID ASC";
                             $stmt = $pdo->prepare($sql);
                             $stmt->execute();
+                            $flag = false;
                             while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
+                                if ($flag == false) {
+                                    echo "\n";
+                                    $flag = true;
+                                }
                                 echo <<<EOM
-                            <li><a href="search_category.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
-                            EOM;
+                                <li><a href="search_category.php?catID=$rec[CategoryID]">$rec[CategoryName]</a></li>\n
+    EOM;
                             }
                             ?>
                         </ul>
