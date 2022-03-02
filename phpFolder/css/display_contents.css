@@ -11,3 +11,8 @@
     margin: 0px;
     padding-left: 20px;
 }
+.se-ru_images{
+    position        : absolute;
+    left            : 100px;
+    top             : 80px;
+}
