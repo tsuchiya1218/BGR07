@@ -14,7 +14,7 @@ if (isset($_SESSION['msg'])) {
 ?>
 <div class="item_flexbox">
     <?php
-    $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan
+    $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,ImgURL,ReviewCount,DisRatio,MoreThan,Goods.CampaignID
             FROM Goods
             INNER JOIN Category
             ON Goods.CategoryID = Category.CategoryID
