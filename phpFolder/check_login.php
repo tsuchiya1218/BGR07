@@ -11,12 +11,10 @@ if (empty($_POST['mail']) || empty($_POST['pass'])) {
     $mail = $_POST['mail'];
     $pass = $_POST['pass'];
 }
-/*
 if (isset($_SESSION['motourl'])) {
     $motourl = $_SESSION['motourl'];
     unset($_SESSION['motourl']);
 }
-*/
 
 $sql = "SELECT COUNT(*) AS cnt 
         FROM Customers

@@ -5,7 +5,7 @@ require "./common/banner.php";
 require_once "./common/db_connect.php";
 
 ?>
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/display_contents.css">
 <?php
     if(isset($_SESSION['msg'])){
         echo $_SESSION['msg'];
@@ -29,7 +29,12 @@ require_once "./common/db_connect.php";
         echo <<< EOM
 <div class="item_content">
     <a href="./goods_detail.php?gID=$rec[GoodsID]">
+    <div class="content_img">
         <img src="./img/$rec[ImgURL]" width="200" height="200">
+        <div class="sale_images">
+                <img src="./img/sale.png" width="100px" height="100px">
+            </div>
+        </div>
     </a><br>
     $rec[GoodsName]<br>
     $rec[CategoryName]<br>
