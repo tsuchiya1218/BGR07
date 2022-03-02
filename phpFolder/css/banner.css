@@ -146,5 +146,7 @@ nav a{
 	/*アニメーションの追加*/
 	transition			:	background-color 1.5s ease;
 	/* 文字の大きさを設定する */
-	font-size			:	20px;
+	font-size			:	23px;
+
+    font-family         : "serif";
 }
