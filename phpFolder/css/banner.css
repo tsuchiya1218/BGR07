@@ -1,7 +1,9 @@
 body {
     margin: 0px;
 }
-
+.header a{
+    display: block;
+}
 .header_row {
     border: solid;
     border-width: 1px 0px;
@@ -27,11 +29,7 @@ body {
     left: 0px;
 }
 
-.header_brand a {
-    /*a要素がはみ出る、他のも修正してほしい*/
-    display: block;
-    height: 60px;
-}
+
 
 .header_spacer {
     width: 100%;
@@ -42,21 +40,27 @@ body {
     margin: 0px
 }
 
+
 .header_login_now{
     font-family: 'Caveat', cursive;
     width: 20%;
+    padding: 6px;
     display: flex;
     justify-content: space-evenly;
 }
 .header_login_now_text{
     font-family: 'Caveat', cursive;
     font-size: 15px;
-    width: 90%;
+    width    : 90%;
     padding: 7px 10px;
+}
+.header_login{
+    width: 60px;
+    padding: 8px 2px;
 }
 
 .header_logout{
-    padding: 5px 5px;
+    padding: 8px 2px;
 }
 
 .search_bar {

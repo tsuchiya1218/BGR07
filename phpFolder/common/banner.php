@@ -20,7 +20,7 @@
             </div>
             <div class="cart">
                 <a href="./cart.php">
-                    <img src="./img/cart.png" width="60" height="60">
+                    <img src="./img/cart.png" width="55" height="55">
                 </a>
             </div>
             <?php
@@ -42,7 +42,7 @@
                 echo <<<EOM
                         <div class="header_login">
                             <a href="./login.php">
-                                <img src="./img/login.png" width="60" height="60">
+                                <img src="./img/login.png" width="50" height="50">
                             </a>
                     </div>
                     <div class="header_registration">

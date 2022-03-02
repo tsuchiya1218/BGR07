@@ -4,11 +4,14 @@ session_start();
 require_once "./common/db_connect.php";
 $sID = session_id();
 // $CCode = 1;
-
-$gID = $_SESSION['handGID'];
-unset($_SESSION['handGID']);
-$qty = $_SESSION['handQty'];
-unset($_SESSION['handQty']);
+if (isset($_SESSION['handGID'])) {
+    $gID = $_SESSION['handGID'];
+    unset($_SESSION['handGID']);
+}
+if (isset($_SESSION['handQty'])) {
+    $qty = $_SESSION['handQty'];
+    unset($_SESSION['handQty']);
+}
 
 //カート内に商品があるかどうかを判断する
 $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ? AND GoodsID = ?";
