@@ -5,8 +5,8 @@ session_start();
 ?>
 
 以下に新しく登録する住所を入力してください
-※変更前に登録されていた住所の情報は削除されますのでご注意ください
-<form action="check_change_address.php" method="post">
+
+<form action="change_address_popup.php" method="post">
     <table>
         <tr>
             <td align="right" valign="top">郵便番号：</td>
