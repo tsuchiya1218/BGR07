@@ -56,9 +56,9 @@ if (!empty($_REQUEST['email'])) {
 }
 //パスワード
 if (!empty($_REQUEST['pass'])) {
-    if(preg_match("/^[a-zA-Z0-9]{6,30}$/",$_REQUEST['pass'])){
+    if (preg_match("/^[a-zA-Z0-9]{6,30}$/", $_REQUEST['pass'])) {
         $pass = $_REQUEST['pass'];
-    }else{
+    } else {
         $_SESSION['eMsg']['pass'] = 'パスワードは英数字6文字以上30字以内で入力してください';
         $errorCheck = false;
     }

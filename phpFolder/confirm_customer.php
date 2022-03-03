@@ -17,3 +17,5 @@ $sql = "INSERT INTO Customers
         VALUES(?,?,?,?,?,?,?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($name, $zipcode, $address1, $address2, $tel, $email, $pass));
+
+require "./common/footer.php";
