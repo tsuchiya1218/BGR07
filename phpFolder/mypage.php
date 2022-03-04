@@ -9,11 +9,9 @@ require "./common/banner.php";
 <div class="mypage" align="center">
     <h3><?php echo $_SESSION['cName']?>様</h3>
     <br/>
-    <ul style="list-style: none;">
-        <li><a href="">クレジットカード情報</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+        <p><a href="./mypage_credit.php">クレジットカード情報</a></p>
+        <p><a href="">ログイン情報</a></p>
+        <p><a href="">個人情報</a></p>
     </ul>
 </div>
 
