@@ -1,12 +1,20 @@
 <?php
 $page_title = 'マイページ';
+session_start();
 require "./common/header.php";
 require "./common/banner.php";
 ?>
 <?php $page_title = 'マイページ' ?>
 
-<div style="text-align:center">
-    <img src="./img/OK.png" width="500" height="300">
+<div class="mypage" align="center">
+    <h3><?php echo $_SESSION['cName']?>様</h3>
+    <br/>
+    <ul style="list-style: none;">
+        <li><a href="">クレジットカード情報</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
 </div>
 
 <?php

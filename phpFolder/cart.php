@@ -8,7 +8,7 @@ $sID = session_id();
 ?>
 <?php
 //if文追加しました。cartページでログアウトする場合、SQL文のエラーが出たため。削除しても結構です。
-if (isset($_SESSION['cCode'])){
+if (isset($_SESSION['cCode'])) {
     $sql = "SELECT COUNT(*) AS cnt FROM Cart WHERE CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array($_SESSION['cCode']));
@@ -31,7 +31,7 @@ if (isset($_SESSION['cCode'])){
                 WHERE Cart.CustomersCode = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(array($_SESSION['cCode']));
-    
+
         echo <<< EOM
         <table border='1'>
         <tr>
@@ -79,7 +79,7 @@ if (isset($_SESSION['cCode'])){
                 </td>
             </tr>\n
             EOM;
-            $totalQuantity += $nfCartQuantity;  
+            $totalQuantity += $nfCartQuantity;
             $totalPrice += $rec['SubTotal'];
         }
         $nfTotalPrice = number_format($totalPrice);
@@ -106,9 +106,7 @@ if (isset($_SESSION['cCode'])){
                 買い物カゴを空にするには右のボタンをクリックしてください。
             </td>
             <td>
-            <form method="POST" action="delete_all.php">
-                <input type="submit" value="買い物カゴを空にする">
-            </form>
+                <input type="submit" id="btn" value="買い物カゴを空にする">
             </td>
         </tr>
         </table>
@@ -120,10 +118,22 @@ if (isset($_SESSION['cCode'])){
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
-       
-}
-else{
+} else {
     header('Location: ./login.php');
 }
 ?>
-<?php require "./common/footer.php";?>
+<script>
+    var btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function() {
+        var result = confirm('全商品を削除してもよろしいでしょうか？');
+
+        if (result) {
+            location.href = './delete_all.php';
+        } else {
+            return;
+        }
+    })
+</script>
+
+<?php require "./common/footer.php"; ?>
