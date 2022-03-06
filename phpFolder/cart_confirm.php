@@ -3,7 +3,9 @@ session_start();
 require "./common/header.php";
 require "./common/banner.php";
 ?>
-<?php
+<link rel="stylesheet" type="text/css" href="./css/order.css">
+<main>
+    <?php
     $totalPrice = 0;
     $totalAmount = 0;
     echo <<< EOM
@@ -32,7 +34,7 @@ require "./common/banner.php";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array($_SESSION['cCode']));
 
-    while(($rec = $stmt->FETCH(PDO::FETCH_ASSOC))!=null){
+    while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
         $GoodsID = $rec['GoodsID'];
         $CartAmount = $rec['CartQuantity'];
         $nfSubTotal = number_format($rec['SubTotal']);
@@ -46,23 +48,24 @@ require "./common/banner.php";
             <td class = >￥$nfSubTotal</td>
         </tr>\n
         EOM;
-        $totalPrice += $rec['Price']*$rec['CartQuantity'];
+        $totalPrice += $rec['Price'] * $rec['CartQuantity'];
         $totalAmount += $rec['CartQuantity'];
     }
-        echo "<tr>\n";
-        echo "  <td colspan=\"2\">合計</td>\n";
-        echo "  <td class = >" . number_format($totalAmount) . "個</td>\n";
-        echo "  <td class = >¥". number_format($totalPrice) ."</td>\n";
-        echo "</tr>\n";
-        echo "</table\n";
-?>
-<p>
-    こちらの内容で注文の内容を確定し、お届け先の住所の選択に進みます。<br>
-    よろしいですか？
-</p>
+    echo "<tr>\n";
+    echo "  <td colspan=\"2\">合計</td>\n";
+    echo "  <td class = >" . number_format($totalAmount) . "個</td>\n";
+    echo "  <td class = >¥" . number_format($totalPrice) . "</td>\n";
+    echo "</tr>\n";
+    echo "</table\n";
+    ?>
+    <p>
+        こちらの内容で注文の内容を確定し、お届け先の住所の選択に進みます。<br>
+        よろしいですか？
+    </p>
 
-<button type="button" onClick="history.back()">戻る</button>
-<button type="button" onClick="document.location='./order_address.php'">配送先選択へ進む</button>
+    <button type="button" onClick="history.back()">戻る</button>
+    <button type="button" onClick="document.location='./order_address.php'">配送先選択へ進む</button>
+</main>
 <?php
 require "./common/footer.php";
 ?>
