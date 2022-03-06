@@ -51,7 +51,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute(array($_SESSION['cCode'], $gID, $qty, $subTotal));
 
 $_SESSION["msg"] = "商品名:{$gName}を{$qty}個カートに追加しました<br>
-カートの中を見るには<a href =\"./cart.php'\">こちら</a>";
+カートの中を見るには<a href =\"./cart.php\">こちら</a>";
 
 header('Location: ./add_comp.php');
 exit();

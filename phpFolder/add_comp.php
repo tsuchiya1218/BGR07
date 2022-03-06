@@ -8,7 +8,7 @@ require_once "./common/db_connect.php";
 <link rel="stylesheet" href="./css/display_contents.css">
 <?php
 if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
+    echo '<div class="message">' . $_SESSION['msg'] . '</div>';
     unset($_SESSION['msg']);
 }
 ?>
