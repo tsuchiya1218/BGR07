@@ -3,7 +3,10 @@ main {
     top: 10px;
 }
 
-body {}
+body {
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: 100;
+}
 
 footer {
     position: relative;

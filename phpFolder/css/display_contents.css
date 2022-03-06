@@ -1,24 +1,28 @@
 /*商品一覧表示なのでindex.cssからは移す*/
-.item_flexbox{
+
+.item_flexbox {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 
-.item_content{
+.item_content {
     width: 250px;
+    height: 500px;
     margin: 0px;
     padding-left: 20px;
 }
-.content_img{
+
+.content_img {
     position: relative;
 }
 
-.sale_images{
-    position        : absolute;
-    width: 50px;
-    height: 50px;
-    left            : 0px;
-    top             : 0px;
+.content_img img {
+    border-radius: 20px;
+}
+
+.sale_images {
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }

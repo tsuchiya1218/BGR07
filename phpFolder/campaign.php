@@ -39,6 +39,7 @@ while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
     EOM;
 }
 ?>
+</div>
 <?php
 require "./common/footer.php";
 ?>
