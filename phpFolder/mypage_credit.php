@@ -4,10 +4,11 @@ require_once "./common/db_connect.php";
 $cCode = $_SESSION['cCode'];
 ?>
 <?php
-$sql = "SELECT CustomersCardnumber,CustomersGoodThru,CustomersCardholder,CardCompany.CardCompanyName
-        FROM Customers,CardCompany 
-        WHERE Customers.CardCompanyCode = CardCompany.CcCode
-        AND   Customers.CustomersCode = ?";
+$sql = "SELECT Customers.CustomersCardnumber, Customers.CustomersGoodThru, Customers.CustomersCardholder, CardCompany.CardCompanyName
+        FROM CardCompany
+        INNER JOIN Customers
+        ON Customers.CardCompanyCode = CardCompany.CcCode
+        WHERE Customers.CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($cCode));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
@@ -21,12 +22,9 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
         <p>クレジットカード番号：<?= $rec["CustomersCardnumber"] ?></p>
         <p>クレジットカード有効期限：<?= $rec["CustomersGoodThru"] ?></p>
         <p>クレジットカード名義：<?= $rec["CustomersCardholder"] ?></p>
-        <p>クレジットカードカード会社：<?= $rec["CardCompanyCode"] ?></p>
+        <p>クレジットカードカード会社：<?= $rec["CardCompanyName"] ?></p>
         <button type="button" onClick="history.back()">戻る</button>
         <button type=“button” onclick="location.href='./mypage_credit_change.php'">カード情報変更</button>
-        <div class="close-btn" id="js-close-btn">
-            <i class="fas fa-times"></i>
-        </div>
     </div>
     <div class="black-background" id="js-black-bg"></div>
 </div>
