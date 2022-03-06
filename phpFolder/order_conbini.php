@@ -17,7 +17,6 @@ require "./common/banner.php";
             <p>お客番号：1234-1234-1234</p>
             <input type="submit" value="決済">
     </form>
-    <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
   </div>
   <div class="black-background" id="js-black-bg"></div>
 </div>

@@ -19,7 +19,6 @@ require "./common/banner.php";
             </br>
             <button type="button" onClick="choice()">支払い情報入力</button>
         </form>
-    <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
   </div>
   <div class="black-background" id="js-black-bg"></div>
 </div>
