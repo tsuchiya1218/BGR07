@@ -31,7 +31,7 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*郵便番号：</td>
             <td>
-                <input type="text" size="60" name="zipcode" value="" placeholder="例:1111111">
+                <input type="text" size="60" name="zipcode" value="" placeholder="例:1111111" maxlength="7">
                 <?php
                 if (isset($_SESSION['eMsg']['zipcode'])) {
                     echo '<br>' . $_SESSION['eMsg']['zipcode'];

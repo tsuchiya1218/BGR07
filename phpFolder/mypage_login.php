@@ -4,7 +4,11 @@ require_once "./common/db_connect.php";
 $cCode = $_SESSION['cCode'];
 ?>
 <?php
-$sql = "SELECT ";
+$sql = "SELECT Customers.CustomersCardnumber, Customers.CustomersGoodThru, Customers.CustomersCardholder, CardCompany.CardCompanyName
+FROM CardCompany
+INNER JOIN Customers
+ON Customers.CardCompanyCode = CardCompany.CcCode
+WHERE Customers.CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($cCode));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
