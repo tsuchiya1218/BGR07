@@ -15,6 +15,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
 ?>
 <script src="./js/popup.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/popup.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
@@ -58,7 +59,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
 
 <?php
 if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
+    echo '<div class="message">' . $_SESSION['msg'] . '</div>';
     unset($_SESSION['msg']);
 }
 ?>

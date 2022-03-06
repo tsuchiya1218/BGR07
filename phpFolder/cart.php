@@ -118,7 +118,7 @@ $sID = session_id();
             echo "<p>カートの中に商品がありません。</p>\n";
         }
         if (isset($_SESSION['msg'])) {
-            echo $_SESSION['msg'];
+            echo '<div class="message">' . $_SESSION['msg'] . '</div>';
             unset($_SESSION['msg']);
         }
     } else {

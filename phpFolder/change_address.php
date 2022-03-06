@@ -3,6 +3,7 @@
 session_start();
 //DBの接続部分を読み込む
 ?>
+<link rel="stylesheet" href="./css/common.css">
 
 以下に新しく登録する住所を入力してください
 
@@ -61,7 +62,7 @@ session_start();
 <?php
 
 if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
+    echo '<div class="message">' . $_SESSION['msg'] . '</div>';
     unset($_SESSION['msg']);
     echo '<input type="button" onClick="document.location=\'./order_address.php\'" value="戻る">';
 }
