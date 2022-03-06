@@ -98,7 +98,7 @@ require_once "./common/db_connect.php";
         }
         ?>
     </div>
-</main> 
+</main>
 <?php
 require "./common/footer.php";
 ?>
