@@ -1,9 +1,16 @@
 body {
     margin: 0px;
+    background-color: rgba(196, 237, 245, 0.274);
 }
-.header a{
+
+.header {
+    background-color: white;
+}
+
+.header a {
     display: block;
 }
+
 .header_row {
     border: solid;
     border-width: 1px 0px;
@@ -29,36 +36,34 @@ body {
     left: 0px;
 }
 
-
-
 .header_spacer {
     width: 100%;
     display: flex;
     margin-right: 10px;
 }
-.cart{
+
+.cart {
     margin: 0px
 }
 
-
-.header_login_now{
-    font-family: 'Caveat', cursive;
+.header_login_now {
     width: 20%;
     display: flex;
     justify-content: space-evenly;
 }
-.header_login_now_text{
-    font-family: 'Caveat', cursive;
+
+.header_login_now_text {
     font-size: 15px;
-    width    : 90%;
+    width: 90%;
     padding: 7px 10px;
 }
-.header_login{
+
+.header_login {
     width: 60px;
     padding: 8px 2px;
 }
 
-.header_logout{
+.header_logout {
     padding: 8px 2px;
 }
 
@@ -115,48 +120,53 @@ body {
     margin: 0px;
     line-height: 60px;
 }
+
 nav a:link {
-	/* 文字色を#3c454dに設定する */
-	color				:	#3c454d;
+    /* 文字色を#3c454dに設定する */
+    color: #3c454d;
 }
+
 
 /* ナビゲーションのリンク（訪問済み）のスタイル設定 */
+
 nav a:visited {
-	/* 文字色を#3c454dに設定する */
-	color				:	#3c454d;
+    /* 文字色を#3c454dに設定する */
+    color: #3c454d;
 }
+
 
 /*アニメーション終了後のスタイル*/
-nav a:hover {
-	/* 文字色を設定する */
-	color				:	white;
-	/*背景色を設定する */
-	background-color	:	#f0000f;
-}
-nav a{
-	/* ブロックレベルに設定する */
-	display				:	block;
-    /* 文字の大きさを設定する */
-	font-size			:	20px;
-	/* リンクの下線を削除する */
-	text-decoration		:	none;
-	/* 内側の余白を上下左右設定する */
-	padding				:	5px 10px;
-	/*アニメーションの追加*/
-	transition			:	background-color 1.5s ease;
 
-    font-family:  serif;
+nav a:hover {
+    /* 文字色を設定する */
+    color: white;
+    /*背景色を設定する */
+    background-color: #f0000f;
 }
+
+nav a {
+    /* ブロックレベルに設定する */
+    display: block;
+    /* 文字の大きさを設定する */
+    font-size: 20px;
+    /* リンクの下線を削除する */
+    text-decoration: none;
+    /* 内側の余白を上下左右設定する */
+    padding: 5px 10px;
+    /*アニメーションの追加*/
+    transition: background-color 1.5s ease;
+}
+
 a.btn--yellow {
     color: #000;
     background-color: #fff100;
     border-bottom: 5px solid #ccc100;
-    text-decoration		:	none;
-  }
-  
-  a.btn--yellow:hover {
+    text-decoration: none;
+}
+
+a.btn--yellow:hover {
     margin-top: 3px;
     color: #000;
     background: #fff20a;
     border-bottom: 2px solid #ccc100;
-  }
+}

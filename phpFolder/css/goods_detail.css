@@ -6,7 +6,8 @@
     position: relative;
     left: 20px;
 }
-.goods_left img{
+
+.goods_left img {
     text-align: center;
 }
 
@@ -16,13 +17,74 @@
     position: relative;
     left: 50px;
     margin: 0px;
-    margin-top: 20px;
+    margin-top: 30px;
     border: 1px solid;
-    padding: 20px;
+    padding: 30px;
     width: 450px;
+    border-radius: 6px;
 }
 
-.price {
-    display: inline-block;
-    margin-right: 5px;
+.goods_right h2 {
+    margin: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.price_row {
+    display: flex;
+    vertical-align: middle;
+    height: 60px;
+}
+
+.review_spacer {
+    width: 50px;
+}
+
+.review_button,
+.review_count {
+    text-align: center;
+    vertical-align: bottom;
+    margin: auto;
+    box-sizing: border-box;
+    width: 50px;
+    height: 40px;
+}
+
+.goods_right table {
+    position: left;
+    width: 300px;
+    height: 150px;
+    border: 1px solid #bec2c7;
+    /*border-collapse: collapse;*/
+    border-radius: 6px;
+}
+
+.goods_right tr {
+    height: 20px;
+}
+
+.goods_right th {
+    text-align: right;
+}
+
+.goods_right td {}
+
+.qty_row {
+    display: flex;
+    vertical-align: middle;
+    height: 60px
+}
+
+.qty_row {
+    justify-content: start;
+    align-items: center;
+}
+
+h4 {
+    margin: 0px;
+}
+
+.explanation {
+    box-sizing: border-box;
+    margin: 0px;
 }
