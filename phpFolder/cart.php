@@ -6,6 +6,7 @@ require_once "./common/db_connect.php";
 $sID = session_id();
 // $cCode = 1;
 ?>
+<link rel="stylesheet" type="text/css" href="./css/order.css">
 <?php
 //if文追加しました。cartページでログアウトする場合、SQL文のエラーが出たため。削除しても結構です。
 if (isset($_SESSION['cCode'])) {
@@ -58,6 +59,7 @@ if (isset($_SESSION['cCode'])) {
                 <td align = right>
                     <form method="POST" action="change_qty.php">
                     <input type="hidden" name="gID" value=$rec[GoodsID]>
+                    <input type="hidden" name="price" value=$rec[Price]>
                     <input type="hidden" name="gName" value=$rec[GoodsName]>
                     <select name="changeQty">\n
             EOM;

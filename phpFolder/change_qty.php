@@ -3,15 +3,18 @@ session_start();
 //DBの接続部分を読み込む
 require_once "./common/db_connect.php";
 $gID = $_REQUEST['gID'];
+$price = $_REQUEST['price'];
 $gName = $_REQUEST['gName'];
 $qty = $_REQUEST['changeQty'];
+$subTotal = $price * $qty;
 ?>
 <?php
 // カートの個数を変更する
-$sql = "UPDATE Cart SET CartQuantity = ? 
+$sql = "UPDATE Cart SET CartQuantity = ?,SubTotal = ?
         WHERE CustomersCode = ? AND GoodsID = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($qty,$_SESSION['cCode'],$gID));
+$stmt->execute(array($qty,$subTotal,$_SESSION['cCode'],$gID));
+
 
 if ($stmt->rowCount() > 0) {
     // 表示するメッセージ設定
