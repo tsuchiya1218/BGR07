@@ -16,7 +16,7 @@ session_start();
                                                                                 } ?>" placeholder="例:1690073(ハイフンなし)" maxlength="7">
                 <?php
                 if (isset($_SESSION['eMsg']['zip'])) {
-                    echo '<br>' . $_SESSION['eMsg']['zip'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['zip'] . '</div>';
                     unset($_SESSION['eMsg']['zip']);
                 }
                 ?>
@@ -30,7 +30,7 @@ session_start();
                                                                     } ?>" placeholder="例:東京都新宿区">
                 <?php
                 if (isset($_SESSION['eMsg']['address1'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address1'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address1'] . '</div>';
                     unset($_SESSION['eMsg']['address1']);
                 }
                 ?>
@@ -44,7 +44,7 @@ session_start();
                                                                     } ?>" placeholder="例:百人町1-25-4 日本電子ビル 6F 161号室">
                 <?php
                 if (isset($_SESSION['eMsg']['address2'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address2'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address2'] . '</div>';
                     unset($_SESSION['eMsg']['address2']);
                 }
                 ?>

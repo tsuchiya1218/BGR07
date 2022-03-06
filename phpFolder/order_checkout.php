@@ -1,7 +1,5 @@
 <?php
 session_start();
-require "./common/header.php";
-require "./common/banner.php";
 ?>
 <script src="./js/order_confirm.js"></script>
 <script src="./js/popup.js"></script>
@@ -22,8 +20,3 @@ require "./common/banner.php";
   </div>
   <div class="black-background" id="js-black-bg"></div>
 </div>
-
-
-<?php
-require "./common/footer.php";
-?>

@@ -23,28 +23,28 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
             <p>クレジットカード番号：<input type="text" size="30" name="creditnum" value="" placeholder="例:">
                 <?php
                 if (isset($_SESSION['eMsg']['creditnum'])) {
-                    echo '<br>' . $_SESSION['eMsg']['creditnum'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['creditnum'] . '</div>';
                     unset($_SESSION['eMsg']['creditnum']);
                 }
                 ?></p>
             <p>クレジットカード有効期限：<input type="text" size="30" name="creditgoodthru" value="" placeholder="例:">
                 <?php
                 if (isset($_SESSION['eMsg']['creditgoodthru'])) {
-                    echo '<br>' . $_SESSION['eMsg']['creditgoodthru'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['creditgoodthru'] . '</div>';
                     unset($_SESSION['eMsg']['creditgoodthru']);
                 }
                 ?></p>
             <p>クレジットカード名義：<input type="text" size="30" name="creditholder" value="" placeholder="例:">
                 <?php
                 if (isset($_SESSION['eMsg']['creditholder'])) {
-                    echo '<br>' . $_SESSION['eMsg']['creditholder'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['creditholder'] . '</div>';
                     unset($_SESSION['eMsg']['creditholder']);
                 }
                 ?></p>
             <p>クレジットカードカード会社： <input type="text" size="30" name="creditcomp" value="" placeholder="例:">
                 <?php
                 if (isset($_SESSION['eMsg']['creditcomp'])) {
-                    echo '<br>' . $_SESSION['eMsg']['creditcomp'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['creditcomp'] . '</div>';
                     unset($_SESSION['eMsg']['creditcomp']);
                 }
                 ?>
