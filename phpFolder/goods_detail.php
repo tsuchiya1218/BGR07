@@ -25,7 +25,7 @@ $stmt->execute(array($gID));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
 ?>
 <div class="goods_left">
-    <img src="./img/<?=$rec["ImgURL"]?>" width="280" height="300">
+    <img src="./img/<?= $rec["ImgURL"] ?>" width="280" height="300">
     <br>↓ここに別の画像を数枚表示↓<br>
     　□　□　□　□<br>
     ↑ここに別の画像を数枚表示↑
@@ -33,11 +33,25 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
 </div>
 
 <div class="goods_right">
-    <h2><?=$rec["GoodsName"]?></h2>
+    <h2><?= $rec["GoodsName"] ?></h2>
     <span class="price">
-        <h3>￥<?=$rec["Price"]?></h3>
+        <h3>￥<?= $rec["Price"] ?></h3>
     </span>
-    <button type="button">”♡”</button>
+    <form action="./review_check.php" method="GET">
+        <input type="hidden" name="gID" value="<?= $gID ?>">
+        <input type="submit" name="review" value="♡">
+    </form>
+    <?php
+    if (isset($_SESSION['eMsg'])) {
+        echo $_SESSION['eMsg'];
+        unset($_SESSION['eMsg']);
+    }
+    if (isset($_SESSION['Msg'])) {
+        echo $_SESSION['Msg'];
+        unset($_SESSION['Msg']);
+    }
+    
+    ?>
     <table>
         <tr>
             <td>機種</td>
@@ -45,19 +59,19 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </tr>
         <tr>
             <td>色</td>
-            <td><?=$rec["ColorName"]?></td>
+            <td><?= $rec["ColorName"] ?></td>
         </tr>
         <tr>
             <td>カテゴリ</td>
-            <td><?=$rec["CategoryName"]?></td>
+            <td><?= $rec["CategoryName"] ?></td>
         </tr>
     </table>
     <form action="check_cart_login.php" method="POST">
         <select name="handQty">
             <?php
             for ($i = 1; $i <= 10; $i++) {
-                if($i==1){
-                    echo "<option value=$i>{$i}個</option>\n";    
+                if ($i == 1) {
+                    echo "<option value=$i>{$i}個</option>\n";
                 }
                 echo "            <option value=$i>{$i}個</option>\n";
             }
@@ -66,14 +80,14 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
                             <input type="hidden" name="handGID" value=$gID>
                             <input type="submit" value="カートに入れる">
                 EOM;
-            if(isset($_SESSION['eMsg'])) {
+            if (isset($_SESSION['eMsg'])) {
                 echo $_SESSION['eMsg'];
                 unset($_SESSION['eMsg']);
             }
             ?>
     </form>
     <h4>説明</h4>
-    <p><?=$rec["GoodsExplanation"]?></p>
+    <p><?= $rec["GoodsExplanation"] ?></p>
 </div>
 <h4>注意事項</h4>
 <ul>
@@ -81,7 +95,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
     <li>ご使用のモニターの設定により、実際のアイテムと色味が異なる場合があります。</li>
 </ul>
 <h4>レビュー数</h4>
-<p><?=$rec["ReviewCount"]?></p>
+<p><?= $rec["ReviewCount"] ?></p>
 
 <?php
 require "./common/footer.php"
