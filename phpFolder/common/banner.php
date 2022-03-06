@@ -28,10 +28,10 @@
             if (isset($_SESSION['cCode'])) {
                 echo <<<EOM
                 <div class="header_login_now">
-                                <div class="header_login_now_text">
+                                <div class="header_login_now_text" align="center">
                                 <a href="./mypage.php" class="btn btn--yellow btn--cubic"> 
-                                    ようこそ<br>
-                                    $_SESSION[cName]さん
+                                    $_SESSION[cName]さん<br>
+                                    マイページ
                                     </a>
                                 </div>
                             </div>

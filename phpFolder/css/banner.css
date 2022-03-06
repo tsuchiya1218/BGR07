@@ -165,14 +165,19 @@ nav a {
 
 a.btn--yellow {
     color: #000;
-    background-color: #fff100;
-    border-bottom: 5px solid #ccc100;
+    background-color: #2ed1dd;
+    border-bottom: 5px solid #1c9fdb;
     text-decoration: none;
+    width : 140px;
+    border-radius:10px;
+
 }
 
 a.btn--yellow:hover {
+    display: flex;
     margin-top: 3px;
     color: #000;
-    background: #fff20a;
-    border-bottom: 2px solid #ccc100;
+    background: #2ed1dd;
+    border-bottom: 2px solid #1c9fdb;
+    border-radius:10px;
 }
