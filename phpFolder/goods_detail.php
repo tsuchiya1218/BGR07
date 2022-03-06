@@ -49,7 +49,6 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
                 <?= $rec["ReviewCount"] ?>
             </div>
         </div>
-
         <?php
         if (isset($_SESSION['eMsg'])) {
             echo $_SESSION['eMsg'];
@@ -59,7 +58,6 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
             echo $_SESSION['Msg'];
             unset($_SESSION['Msg']);
         }
-
         ?>
         <table>
             <tr>
