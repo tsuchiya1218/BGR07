@@ -9,8 +9,8 @@
 
 .item_content {
     width: 250px;
-    height: 500px;
-    margin: 0px;
+    height: auto;
+    margin-top: 20px;
     padding-left: 20px;
 }
 
@@ -19,6 +19,7 @@
 }
 
 .content_img img {
+    text-align: center;
     border-radius: 20px;
 }
 
@@ -26,4 +27,42 @@
     position: absolute;
     left: 0px;
     top: 0px;
+}
+
+.goods_name {
+    width: 200px;
+    padding: 5px 5px;
+    border-bottom: 1px solid grey;
+}
+
+.price_row {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    padding: 5px 5px;
+}
+
+.price,
+.price_spacer,
+.dis_ratio {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.price {}
+
+.price_spacer {}
+
+.dis_ratio {
+    color: #45db90;
+}
+
+.review_count {
+    text-align: right;
+    width: 200px;
+}
+
+.more_than {
+    width: 200px;
+    color: #d833cf;
 }
