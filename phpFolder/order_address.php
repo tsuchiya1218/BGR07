@@ -29,14 +29,26 @@ $zip2    = substr($rec['CustomersZip'], 3);
 echo "<tr><td class = >" . $zip1 . '-' . $zip2 . "</td>";
 echo "<td class = >" . $rec['CustomersAddress1'] . "</td>";
 echo "<td class = >" . $rec['CustomersAddress2'] . "</td>";
-echo "<td><input type=\"button\" value=\"変更する\"
-            onClick=\"document.location='./change_address.php'\"></td></tr>\n";
+echo "<td><input type=\"button\" id=\"btn\" value=\"変更する\"></td></tr>\n";
 if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
     unset($_SESSION['msg']);
 }
 
 ?>
+<script>
+    var btn = document.getElementById('btn');
+
+    btn.addEventListener('click', function() {
+        var result = confirm('住所変更ページに移動してもよろしいでしょうか？');
+
+        if (result) {
+            location.href = './change_address.php';
+        } else {
+            return;
+        }
+    })
+</script>
 </table>
 <button type="button" onClick="history.back()">戻る</button>
 <button type="button" onClick="document.location='./order_confirm.php'">お支払い手続きに進む</button>

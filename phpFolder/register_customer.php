@@ -29,13 +29,37 @@ require_once "./common/db_connect.php";
             </td>
         </tr>
         <tr>
-            <td align="right" valign="top">*住所：</td>
+            <td align="right" valign="top">*郵便番号：</td>
             <td>
-                <input type="text" size="60" name="address" value="" placeholder="例:東京都新宿区百人町1-25-4 日本電子ビル 6F 161号室">
+                <input type="text" size="60" name="zipcode" value="" placeholder="例:1111111">
                 <?php
-                if (isset($_SESSION['eMsg']['address'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address'];
-                    unset($_SESSION['eMsg']['address']);
+                if (isset($_SESSION['eMsg']['zipcode'])) {
+                    echo '<br>' . $_SESSION['eMsg']['zipcode'];
+                    unset($_SESSION['eMsg']['zipcode']);
+                }
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">*都道府県市区町村：</td>
+            <td>
+                <input type="text" size="60" name="address1" value="" placeholder="例:東京都新宿区">
+                <?php
+                if (isset($_SESSION['eMsg']['address1'])) {
+                    echo '<br>' . $_SESSION['eMsg']['address1'];
+                    unset($_SESSION['eMsg']['address1']);
+                }
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" valign="top">字名・番地：</td>
+            <td>
+                <input type="text" size="60" name="address2" value="" placeholder="例:1-25-4 日本電子ビル 6F 161号室">
+                <?php
+                if (isset($_SESSION['eMsg']['address2'])) {
+                    echo '<br>' . $_SESSION['eMsg']['address2'];
+                    unset($_SESSION['eMsg']['address2']);
                 }
                 ?>
             </td>
@@ -99,7 +123,10 @@ require_once "./common/db_connect.php";
 </table>
 <?php
 unset($_SESSION['eMsg']);
+<<<<<<< HEAD
 
+=======
+>>>>>>> f9b4ce8649c16ef9806c06ea01bbc8c08fb1acdf
 ?>
 <?php
 require "./common/footer.php";
