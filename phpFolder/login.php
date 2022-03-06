@@ -7,8 +7,8 @@ require "./common/header.php";
     <a href="./index.php"><img src="./img/Banner.png" width="500" height="150"></a>
 </div>
 
-<p>メールアドレス・パスワードを入力してください。</p>
-<table>
+<p align="center">メールアドレス・パスワードを入力してください。</p>
+<table class="loginform" align="center">
     <form method="POST" action="./check_login.php">
         <tr>
             <td align="right">メールアドレス：</td>
@@ -28,21 +28,17 @@ require "./common/header.php";
             </td>
             <td>
                 <input type="submit" value="ログイン">
+                <input type="button" value="パスワードを忘れた" onClick="document.location='./resetting_password.php'">
             </td>
         </tr>
-        <tr>
-            <td>
-                <?php
-                if (isset($_SESSION['eMsg'])) {
-                    echo $_SESSION['eMsg'];
-                    unset($_SESSION['eMsg']);
-                }
-                ?>
-            </td>
-        </tr>
+        <?php
+        if (isset($_SESSION['eMsg'])) {
+            echo '<div class="message" align="center">' . $_SESSION['eMsg'] . '</div>';
+            unset($_SESSION['eMsg']);
+        }
+        ?>
     </form>
 </table>
-<input type="button" value="パスワードを忘れた" onClick="document.location='./resetting_password.php'">
 <?php
 require "./common/footer.php";
 ?>

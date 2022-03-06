@@ -25,3 +25,7 @@ footer {
 .message {
     color: rgb(223, 43, 43);
 }
+
+.loginform {
+    text-align: center;
+}
