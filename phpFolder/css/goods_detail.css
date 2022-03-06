@@ -72,10 +72,7 @@
 .qty_row {
     display: flex;
     vertical-align: middle;
-    height: 60px
-}
-
-.qty_row {
+    height: 60px;
     justify-content: start;
     align-items: center;
 }
