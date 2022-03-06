@@ -47,10 +47,10 @@ if ($errorCheck == false) {
     exit();
 } else if ($errorCheck == true) {
     $sql = "UPDATE Customers 
-            SET CustomersCardnumber = ?,CustomersGoodThru = ?,CustomersCardholder =  ?
+            SET CustomersCardnumber = ?,CustomersGoodThru = ?, CardCompanyCode = ?, CustomersCardholder =  ?
             WHERE CustomersCode = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($creditnum,$creditgoodthru,$creditholder,$_SESSION['cCode']));
+    $stmt->execute(array($creditnum, $creditgoodthru, 500001, $creditholder, $_SESSION['cCode']));
     header('Location: ./mypage_credit.php');
     exit();
 }
