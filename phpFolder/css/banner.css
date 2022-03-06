@@ -170,11 +170,10 @@ a.btn--yellow {
     text-decoration: none;
     width : 140px;
     border-radius:10px;
-
+    text-align: center;
 }
 
 a.btn--yellow:hover {
-    display: flex;
     margin-top: 3px;
     color: #000;
     background: #2ed1dd;

@@ -28,7 +28,7 @@
             if (isset($_SESSION['cCode'])) {
                 echo <<<EOM
                 <div class="header_login_now">
-                                <div class="header_login_now_text" align="center">
+                                <div class="header_login_now_text">
                                 <a href="./mypage.php" class="btn btn--yellow btn--cubic"> 
                                     $_SESSION[cName]さん<br>
                                     マイページ
