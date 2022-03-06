@@ -4,11 +4,9 @@ require_once "./common/db_connect.php";
 $cCode = $_SESSION['cCode'];
 ?>
 <?php
-$sql = "SELECT Customers.CustomersCardnumber, Customers.CustomersGoodThru, Customers.CustomersCardholder, CardCompany.CardCompanyName
-FROM CardCompany
-INNER JOIN Customers
-ON Customers.CardCompanyCode = CardCompany.CcCode
-WHERE Customers.CustomersCode = ?";
+$sql = "SELECT CustomersEmail, CustomersPass
+        FROM Customers
+        WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($cCode));
 $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
@@ -18,9 +16,10 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
 <link rel="stylesheet" href="./css/popup.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
-        <h3><?= $_SESSION["cName"] ?>様のカード登録情報</h3>
+        <h3><?= $_SESSION["cName"] ?>様のログイン登録情報</h3>
+        <p>E-mail：<?= $rec["CustomersEmail"] ?></p>
+        <p>パスワード：<?= $rec["CustomersPass"] ?></p>
         <button type="button" onClick="history.back()">戻る</button>
-        <button type=“button” onclick="location.href='./mypage_credit_change.php'">カード情報変更</button>
     </div>
     <div class="black-background" id="js-black-bg"></div>
 </div>
