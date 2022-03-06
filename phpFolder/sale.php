@@ -58,6 +58,7 @@ require_once "./common/db_connect.php";
         }
     }
     ?>
+    </div>
     <?php
     require "./common/footer.php";
     ?>

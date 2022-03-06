@@ -9,5 +9,14 @@ body {
 }
 
 footer {
+    height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.copy_right {
+    width: auto;
+    display: inline-block;
+    padding-top: 50px;
     text-align: center;
 }
