@@ -4,7 +4,7 @@ require_once "./common/db_connect.php";
 $cCode = $_SESSION['cCode'];
 ?>
 <?php
-$sql = "SELECT CustomersPhone, CustomersBirthday, CustomersGender
+$sql = "SELECT CustomersEmail, CustomersPass
         FROM Customers
         WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
@@ -16,10 +16,9 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
 <link rel="stylesheet" href="./css/popup.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
-        <h3><?= $_SESSION["cName"] ?>様の個人登録情報</h3>
-        <p>電話番号：<?= $rec["CustomersPhone"] ?></p>
-        <p>誕生日：<?= $rec["CustomersBirthday"] ?></p>
-        <p>性別：<?= $rec["CustomersGender"] ?></p>
+        <h3><?= $_SESSION["cName"] ?>様のログイン登録情報</h3>
+        <p>E-mail：<?= $rec["CustomersEmail"] ?></p>
+        <p>パスワード：<?= $rec["CustomersPass"] ?></p>
         <button type="button" onClick="history.back()">戻る</button>
     </div>
     <div class="black-background" id="js-black-bg"></div>

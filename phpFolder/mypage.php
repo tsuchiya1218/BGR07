@@ -10,8 +10,8 @@ require "./common/banner.php";
     <h3><?php echo $_SESSION['cName']?>様</h3>
     <br/>
         <p><a href="./mypage_credit.php">クレジットカード情報</a></p>
-        <p><a href="">ログイン情報</a></p>
-        <p><a href="">個人情報</a></p>
+        <p><a href="./mypage_login.php">ログイン情報</a></p>
+        <p><a href="./mypage_personal.php">個人情報</a></p>
     </ul>
 </div>
 
