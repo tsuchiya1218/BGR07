@@ -12,18 +12,19 @@ if (!empty($_REQUEST['name'])) {
 }
 //郵便番号
 if (!empty($_REQUEST['zipcode'])) {
-    $address = $_REQUEST['zipcode'];
+    $zipcode = $_REQUEST['zipcode'];
 } else {
     $_SESSION['eMsg']['zipcode'] = '郵便番号を入力してください。';
     $errorCheck = false;
 }
 //住所1
 if (!empty($_REQUEST['address1'])) {
-    $address = $_REQUEST['address1'];
+    $address1 = $_REQUEST['address1'];
 } else {
     $_SESSION['eMsg']['address1'] = '住所を入力してください。';
     $errorCheck = false;
 }
+$address2 = $_REQUEST['address2'];
 //
 if (!empty($_REQUEST['tel'])) {
     if (preg_match("/^0[0-9]{1,4}-[0-9]{1,4}-[0-9]{3,4}\z/", $_REQUEST['tel'])) {
@@ -84,13 +85,15 @@ if ($errorCheck == false) {
     exit();
 } else if ($errorCheck == true) {
 
-    $_SESSION['name'] = $_REQUEST['name'];
-    $_SESSION['zipcode'] = $_REQUEST['zipcode'];
-    $_SESSION['address1'] = $_REQUEST['address1'];
-    $_SESSION['address2'] = $_REQUEST['address2'];
-    $_SESSION['tel'] = $_REQUEST['tel'];
-    $_SESSION['email'] = $_REQUEST['email'];
-    $_SESSION['pass'] = $_REQUEST['pass'];
+    $_SESSION['confirm'] = [
+        'name' => $name,
+        'zipcode' => $zipcode,
+        'address1' => $address1,
+        'address2' => $address2,
+        'tel' => $tel,
+        'email' => $email,
+        'pass' => $pass
+    ];
 
     header('Location: confirm_customer.php');
     exit();
