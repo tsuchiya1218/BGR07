@@ -7,12 +7,15 @@ require_once "./common/db_connect.php";
 <div style="text-align:center">
     <a href="./index.php"><img src="./img/Banner.png" width="500" height="150"></a>
 </div>
-<p>お客様の情報を入力してください。</p>
+<p>
+    この度はご利用ありがとうございます。<br>
+    当サイトの会員登録していただくために必要なお客様の情報を入力してください。
+</p>
 <hr>
 <p>以下のフォームにデータを入力し、「次へ>>」ボタンを押してください。</p>
 <p>*が付いている項目は必須項目です</p>
 <table>
-    <form method="POST" action="check_customer.php">
+    <form method="POST" action="check_register.php">
         <tr>
             <td align="right" valign="top">*お名前：</td>
             <td>
@@ -62,9 +65,9 @@ require_once "./common/db_connect.php";
             </td>
         </tr>
         <tr>
-            <td align="right" valign="top">*パスワード（6文字以上）：</td>
+            <td align="right" valign="top">*パスワード（8文字以上）：</td>
             <td>
-                <input type="password" name="pass" size="20" minlength="6" maxlength="20">
+                <input type="password" name="pass" size="8" minlength="8" maxlength="8">
                 <?php
                 if (isset($_SESSION['eMsg']['pass'])) {
                     echo '<br>' . $_SESSION['eMsg']['pass'];
@@ -76,7 +79,7 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*パスワード（確認用）：</td>
             <td>
-                <input type="password" name="pass2" size="20" minlength="6" maxlength="20">
+                <input type="password" name="pass2" size="8" minlength="8" maxlength="8">
                 <?php
                 if (isset($_SESSION['eMsg']['pass2'])) {
                     echo '<br>' . $_SESSION['eMsg']['pass2'];
@@ -95,7 +98,7 @@ require_once "./common/db_connect.php";
     </form>
 </table>
 <?php
-
+unset($_SESSION['eMsg']);
 
 ?>
 <?php
