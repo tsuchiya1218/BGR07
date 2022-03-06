@@ -4,11 +4,11 @@ require "./common/header.php";
 require "./common/banner.php";
 require_once "./common/db_connect.php";
 //空白のまま検索するとindexに遷移
-if ($_POST['word'] == '') {
+if ($_GET['word'] == '') {
     header("Location: ./index.php");
     exit();
 }
-$word = '%' . $_POST['word'] . '%';
+$word = '%' . $_GET['word'] . '%';
 ?>
 <link rel="stylesheet" href="./css/display_contents.css">
 <?php
@@ -19,7 +19,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute(array($word));
 $row = $stmt->FETCH(PDO::FETCH_BOTH);
 if ($row['cnt'] == 0) {
-    echo "「" . $_POST['word'] . "」に関する検索結果が見つかりませんでした。";
+    echo "「" . $_GET['word'] . "」に関する検索結果が見つかりませんでした。";
 } else {
     $sql = "SELECT COUNT(Goods.GoodsID) cnt
             FROM Goods
@@ -29,13 +29,19 @@ if ($row['cnt'] == 0) {
             ON Goods.GoodsID = Img.GoodsID
             INNER JOIN Campaign
             ON Goods.CampaignID = Campaign.CampaignID
+            INNER JOIN Variation
+            ON Goods.GoodsID = Variation.GoodsID
+            INNER JOIN Model
+            ON Variation.ModelID = Model.ModelID
             WHERE Goods.GoodsName LIKE ?
             OR GoodsExplanation LIKE ?
-            OR Category.CategoryName LIKE ?";
+            OR Category.CategoryName LIKE ?
+            OR Model.ModelName LIKE ?";
+
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array($word, $word, $word));
+    $stmt->execute(array($word, $word, $word, $word));
     $row = $stmt->FETCH(PDO::FETCH_ASSOC);
-    echo "「" . $_POST['word'] . "」に関する検索結果が" . $row['cnt'] . '件見つかりました。<br>';
+    echo "「" . $_GET['word'] . "」に関する検索結果が" . $row['cnt'] . '件見つかりました。<br>';
     echo '<div class="item_flexbox">';
     $sql = "SELECT Goods.GoodsID,Goods.GoodsName,CategoryName,Price,
                 GoodsExplanation,ImgURL,ReviewCount,DisRatio,MoreThan,Goods.CampaignID

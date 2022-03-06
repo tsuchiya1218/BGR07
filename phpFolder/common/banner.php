@@ -10,7 +10,7 @@
             </div>
             <div class="header_spacer">
                 <div class="search_bar">
-                    <form action="./search_word.php" method="POST">
+                    <form action="./search_word.php" method="GET">
                         <input type="text" class="search_text" name="word" placeholder="検索">
                         <div class="search_button">
                             <input type="image" src="./img/search.png" width="30" height="30">

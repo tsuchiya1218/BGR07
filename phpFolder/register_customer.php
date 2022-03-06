@@ -123,10 +123,6 @@ require_once "./common/db_connect.php";
 </table>
 <?php
 unset($_SESSION['eMsg']);
-<<<<<<< HEAD
-
-=======
->>>>>>> f9b4ce8649c16ef9806c06ea01bbc8c08fb1acdf
 ?>
 <?php
 require "./common/footer.php";
