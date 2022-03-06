@@ -51,11 +51,11 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </div>
         <?php
         if (isset($_SESSION['eMsg'])) {
-            echo $_SESSION['eMsg'];
+            echo '<div class="message">' . $_SESSION['eMsg'] . '</div>';
             unset($_SESSION['eMsg']);
         }
         if (isset($_SESSION['Msg'])) {
-            echo $_SESSION['Msg'];
+            echo '<div class="message">' . $_SESSION['Msg'] . '</div>';
             unset($_SESSION['Msg']);
         }
         ?>
@@ -89,7 +89,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
                             <input type="submit" value="カートに入れる">
                 EOM;
                     if (isset($_SESSION['eMsg'])) {
-                        echo $_SESSION['eMsg'];
+                        echo '<div class="message">' . $_SESSION['eMsg'] . '</div>';
                         unset($_SESSION['eMsg']);
                     }
                     ?>

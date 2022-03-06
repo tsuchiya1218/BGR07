@@ -3,6 +3,7 @@
 session_start();
 //DBの接続部分を読み込む
 ?>
+<link rel="stylesheet" href="./css/common.css">
 
 以下に新しく登録する住所を入力してください
 
@@ -16,7 +17,7 @@ session_start();
                                                                                 } ?>" placeholder="例:1690073(ハイフンなし)" maxlength="7">
                 <?php
                 if (isset($_SESSION['eMsg']['zip'])) {
-                    echo '<br>' . $_SESSION['eMsg']['zip'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['zip'] . '</div>';
                     unset($_SESSION['eMsg']['zip']);
                 }
                 ?>
@@ -30,7 +31,7 @@ session_start();
                                                                     } ?>" placeholder="例:東京都新宿区">
                 <?php
                 if (isset($_SESSION['eMsg']['address1'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address1'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address1'] . '</div>';
                     unset($_SESSION['eMsg']['address1']);
                 }
                 ?>
@@ -44,7 +45,7 @@ session_start();
                                                                     } ?>" placeholder="例:百人町1-25-4 日本電子ビル 6F 161号室">
                 <?php
                 if (isset($_SESSION['eMsg']['address2'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address2'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address2'] . '</div>';
                     unset($_SESSION['eMsg']['address2']);
                 }
                 ?>
@@ -61,7 +62,7 @@ session_start();
 <?php
 
 if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
+    echo '<div class="message">' . $_SESSION['msg'] . '</div>';
     unset($_SESSION['msg']);
     echo '<input type="button" onClick="document.location=\'./order_address.php\'" value="戻る">';
 }

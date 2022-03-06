@@ -1,7 +1,5 @@
 <?php
 session_start();
-require "./common/header.php";
-require "./common/banner.php";
 ?>
 <script src="./js/order_confirm.js"></script>
 <script src="./js/popup.js"></script>
@@ -11,17 +9,12 @@ require "./common/banner.php";
 <div class="popup" id="js-popup">
   <div class="popup-inner">
     <form action="order_comp.php" method="POST">
-            <p>受付方法：（コンビニ払い）</p>
-            <p>近くの８TWELVEのコンビニにて決済お願い致します。</p>
-            <img src="./img/conbiniISBN.png">
-            <p>お客番号：1234-1234-1234</p>
-            <input type="submit" value="決済">
+      <p>受付方法：（コンビニ払い）</p>
+      <p>近くの８TWELVEのコンビニにて決済お願い致します。</p>
+      <img src="./img/conbiniISBN.png">
+      <p>お客番号：1234-1234-1234</p>
+      <input type="submit" value="決済">
     </form>
   </div>
   <div class="black-background" id="js-black-bg"></div>
 </div>
-
-
-<?php
-require "./common/footer.php";
-?>

@@ -21,3 +21,7 @@ footer {
     padding-top: 50px;
     text-align: center;
 }
+
+.message {
+    color: rgb(223, 43, 43);
+}
