@@ -6,10 +6,11 @@ $cCode = $_SESSION['cCode'];
 <script src="./js/popup.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="./css/popup.css">
+<link rel="stylesheet" href="./css/history.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
         <h3><?= $_SESSION["cName"] ?>様のカード登録情報</h3>
-        <table border='1'>
+        <table border='1' class="history">
             <tr>
                 <th>商品名</th>
                 <th>単価</th>
@@ -58,7 +59,7 @@ $cCode = $_SESSION['cCode'];
             echo "  <td class = >" . number_format($totalAmount) . "個</td>\n";
             echo "  <td class = >¥" . number_format($totalPrice) . "</td>\n";
             echo "</tr>\n";
-            echo "</table\n";
+            // echo "</table\n";
             $sql = "SELECT *
             FROM Customers
             WHERE CustomersCode = ?";
@@ -68,12 +69,10 @@ $cCode = $_SESSION['cCode'];
             $zip1    = substr($rec['CustomersZip'], 0, 3);
             $zip2    = substr($rec['CustomersZip'], 3);
             ?>
-        </table>
-        <table border="1">
             <tr>
                 <th>郵便番号</th>
                 <th>都道府県・市区町村</th>
-                <th>町名・番地以下・建物名</th>
+                <th colspan="2">町名・番地以下・建物名</th>
             </tr>
             <?php
             $sql = "SELECT CustomersCode,CustomersZip,CustomersAddress1,CustomersAddress2
@@ -85,15 +84,13 @@ $cCode = $_SESSION['cCode'];
             $zip1    = substr($rec['CustomersZip'], 0, 3);
             $zip2    = substr($rec['CustomersZip'], 3);
             echo <<<EOM
-    <tr>
-        <td>$zip1-$zip2</td>
-        <td>$rec[CustomersAddress1]</td>
-        <td>$rec[CustomersAddress2]</td>
-    </tr>
-EOM;
+            <tr>
+                <td>$zip1-$zip2</td>
+                <td>$rec[CustomersAddress1]</td>
+                <td colspan="2">$rec[CustomersAddress2]</td>
+            </tr>
+        EOM;
             ?>
-        </table>
-        <table border="1">
             <tr>
                 <th>商品合計金額</th>
                 <th>手数料</th>
@@ -107,7 +104,7 @@ EOM;
                 <td>合計￥1800</td>
             </tr>
         </table>
-        <br/>
+        <br />
         <button type="button" onClick="history.back()">戻る</button>
     </div>
     <div class="black-background" id="js-black-bg"></div>
