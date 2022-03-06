@@ -19,7 +19,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*お名前：</td>
             <td>
-                <input type="text" size="20" name="name" value="" placeholder="例:日本 電子" maxlength="30">
+                <input type="text" size="20" name="name" value="<?php if (isset($_SESSION['val']['name'])) {
+                                                                    echo $_SESSION['val']['name'];
+                                                                } ?>" placeholder="例:日本 電子" maxlength="30">
                 <?php
                 if (isset($_SESSION['eMsg']['name'])) {
                     echo '<br>' . $_SESSION['eMsg']['name'];
@@ -31,7 +33,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*郵便番号：</td>
             <td>
-                <input type="text" size="60" name="zipcode" value="" placeholder="例:1111111" maxlength="7">
+                <input type="text" size="60" name="zipcode" value="<?php if (isset($_SESSION['val']['zipcode'])) {
+                                                                        echo $_SESSION['val']['zipcode'];
+                                                                    } ?>" placeholder="例:1111111" maxlength="7">
                 <?php
                 if (isset($_SESSION['eMsg']['zipcode'])) {
                     echo '<br>' . $_SESSION['eMsg']['zipcode'];
@@ -43,7 +47,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*都道府県市区町村：</td>
             <td>
-                <input type="text" size="60" name="address1" value="" placeholder="例:東京都新宿区">
+                <input type="text" size="60" name="address1" value="<?php if (isset($_SESSION['val']['address1'])) {
+                                                                        echo $_SESSION['val']['address1'];
+                                                                    } ?>" placeholder="例:東京都新宿区">
                 <?php
                 if (isset($_SESSION['eMsg']['address1'])) {
                     echo '<br>' . $_SESSION['eMsg']['address1'];
@@ -55,7 +61,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">字名・番地：</td>
             <td>
-                <input type="text" size="60" name="address2" value="" placeholder="例:1-25-4 日本電子ビル 6F 161号室">
+                <input type="text" size="60" name="address2" value="<?php if (isset($_SESSION['val']['address2'])) {
+                                                                        echo $_SESSION['val']['address2'];
+                                                                    } ?>" placeholder="例:1-25-4 日本電子ビル 6F 161号室">
                 <?php
                 if (isset($_SESSION['eMsg']['address2'])) {
                     echo '<br>' . $_SESSION['eMsg']['address2'];
@@ -67,7 +75,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">電話番号：</td>
             <td>
-                <input type="tel" size="20" name="tel" value="" placeholder="例:03-3369-xxxx" maxlength="20">
+                <input type="tel" size="20" name="tel" value="<?php if (isset($_SESSION['val']['tel'])) {
+                                                                    echo $_SESSION['val']['tel'];
+                                                                } ?>" placeholder="例:03-3369-xxxx" maxlength="20">
                 <?php
                 if (isset($_SESSION['eMsg']['tel'])) {
                     echo '<br>' . $_SESSION['eMsg']['tel'];
@@ -79,7 +89,9 @@ require_once "./common/db_connect.php";
         <tr>
             <td align="right" valign="top">*メールアドレス：</td>
             <td>
-                <input type="email" size="40" name="email" value="" placeholder="例:denshi@nichiden.com">
+                <input type="email" size="40" name="email" value="<?php if (isset($_SESSION['val']['email'])) {
+                                                                    echo $_SESSION['val']['email'];
+                                                                } ?>" placeholder="例:denshi@nichiden.com">
                 <?php
                 if (isset($_SESSION['eMsg']['email'])) {
                     echo '<br>' . $_SESSION['eMsg']['email'];
@@ -123,6 +135,9 @@ require_once "./common/db_connect.php";
 </table>
 <?php
 unset($_SESSION['eMsg']);
+if (isset($_SESSION['val'])) {
+    unset($_SESSION['val']);
+}
 ?>
 <?php
 require "./common/footer.php";
