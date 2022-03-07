@@ -11,6 +11,8 @@ require "./common/banner.php";
         またのご利用をお待ちしております
         左上の当サイトロゴからTOPへと戻れます。
     </p>
+    <p><a href="./index.php">HOMEへ</a></p>
+
     <!--
     <table border='1'>
         <tr>

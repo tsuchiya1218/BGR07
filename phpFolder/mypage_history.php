@@ -20,11 +20,11 @@ $cCode = $_SESSION['cCode'];
             <?php
             $totalPrice = 0;
             $totalAmount = 0;
-            $sql = "SELECT CustomersCode,Cart.GoodsID,CartQuantity,SubTotal,GoodsName,CategoryName,
+            $sql = "SELECT Cart2.CustomersCode2,Cart2.GoodsID2,CartQuantity2,SubTotal2,GoodsName,CategoryName,
                     Price,ImgURL,ColorName
-            FROM Cart
+            FROM Cart2
             INNER JOIN Goods
-            ON Cart.GoodsID = Goods.GoodsID
+            ON Cart2.GoodsID2 = Goods.GoodsID
             INNER JOIN Category
             ON Goods.CategoryID = Category.CategoryID
             INNER JOIN Img
@@ -33,16 +33,16 @@ $cCode = $_SESSION['cCode'];
             ON Goods.GoodsID = Variation.GoodsID
             INNER JOIN Color
             ON Variation.ColorID = Color.ColorID
-            WHERE Cart.CustomersCode = ?";
+            WHERE Cart2.CustomersCode2 = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array($_SESSION['cCode']));
 
             while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
-                $GoodsID = $rec['GoodsID'];
-                $CartAmount = $rec['CartQuantity'];
-                $nfSubTotal = number_format($rec['SubTotal']);
+                $GoodsID = $rec['GoodsID2'];
+                $CartAmount = $rec['CartQuantity2'];
+                $nfSubTotal = number_format($rec['SubTotal2']);
                 $nfPrice = number_format($rec['Price']);
-                $nfCQty = number_format($rec['CartQuantity']);
+                $nfCQty = number_format($rec['CartQuantity2']);
                 echo <<< EOM
         <tr>
         <td class = >$rec[GoodsName]<br><img src="./img/$rec[ImgURL]" width="200" height="200"></td>
@@ -51,8 +51,8 @@ $cCode = $_SESSION['cCode'];
         <td class = >￥$nfSubTotal</td>
         </tr>\n
         EOM;
-                $totalPrice += $rec['Price'] * $rec['CartQuantity'];
-                $totalAmount += $rec['CartQuantity'];
+                $totalPrice += $rec['Price'] * $rec['CartQuantity2'];
+                $totalAmount += $rec['CartQuantity2'];
             }
             echo "<tr>\n";
             echo "  <td colspan=\"2\">合計</td>\n";

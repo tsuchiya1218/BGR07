@@ -19,12 +19,16 @@ while (($rec = $stmt->FETCH(PDO::FETCH_ASSOC)) != null) {
 }
 
 
+
+
 $date = date("Y/m/d H:i:s");
 
 $sql = "INSERT INTO OrderReq(OrderID,CustomersCode,OrderDay,SendID,Postage,TotalPrice) 
         VALUES(?,?,?,?,?,?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($orderReq,$_SESSION['cCode'],$date,1,0,$cartTotal));
+
+
 
 header("Location: order_set.php");
 exit();

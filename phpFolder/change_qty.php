@@ -15,6 +15,11 @@ $sql = "UPDATE Cart SET CartQuantity = ?,SubTotal = ?
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($qty,$subTotal,$_SESSION['cCode'],$gID));
 
+$sql = "UPDATE Cart2 SET CartQuantity2 = ?,SubTotal2 = ?
+        WHERE CustomersCode2 = ? AND GoodsID2 = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array($qty,$subTotal,$_SESSION['cCode'],$gID));
+
 
 if ($stmt->rowCount() > 0) {
     // 表示するメッセージ設定
