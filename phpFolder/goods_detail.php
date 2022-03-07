@@ -102,7 +102,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </div>
     </div>
     <h4>注意事項</h4>
-    <ul>
+    <ul style="list-style: none;">
         <li>画像は合成イメージです。実際のアイテムとは異なる場合があります。</li>
         <li>ご使用のモニターの設定により、実際のアイテムと色味が異なる場合があります。</li>
     </ul>
