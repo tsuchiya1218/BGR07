@@ -16,6 +16,7 @@ session_start();
             <input type="radio" name="checkout">コンビニ支払い<br>
             </br>
             <button type="button" onClick="choice()">支払い情報入力</button>
+            <p><input type="button" value="戻る" onClick="document.location='javascript:history.go(-1)'"></p>
         </form>
   </div>
   <div class="black-background" id="js-black-bg"></div>
