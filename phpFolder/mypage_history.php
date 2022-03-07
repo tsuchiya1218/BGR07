@@ -9,7 +9,7 @@ $cCode = $_SESSION['cCode'];
 <link rel="stylesheet" href="./css/history.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
-        <h3><?= $_SESSION["cName"] ?>様のカード登録情報</h3>
+        <h3><?= $_SESSION["cName"] ?>様の注文履歴</h3>
         <table border='1' class="history">
             <tr>
                 <th>商品名</th>
