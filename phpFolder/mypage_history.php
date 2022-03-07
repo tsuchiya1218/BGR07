@@ -5,8 +5,8 @@ $cCode = $_SESSION['cCode'];
 ?>
 <script src="./js/popup.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-<link rel="stylesheet" href="./css/popup.css">
 <link rel="stylesheet" href="./css/history.css">
+<link rel="stylesheet" href="./css/popup_mypage_history.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
         <h3><?= $_SESSION["cName"] ?>様の注文履歴</h3>
