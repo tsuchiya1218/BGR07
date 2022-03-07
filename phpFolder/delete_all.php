@@ -7,5 +7,9 @@ $sql = "DELETE FROM Cart WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(array($_SESSION['cCode']));
 
+$sql = "DELETE FROM Cart2 WHERE CustomersCode2 = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array($_SESSION['cCode']));
+
 header('Location: ./cart.php');
 exit();
