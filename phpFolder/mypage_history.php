@@ -5,8 +5,8 @@ $cCode = $_SESSION['cCode'];
 ?>
 <script src="./js/popup.js"></script>
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-<link rel="stylesheet" href="./css/popup.css">
 <link rel="stylesheet" href="./css/history.css">
+<link rel="stylesheet" href="./css/popup_mypage_history.css">
 <div class="popup" id="js-popup">
     <div class="popup-inner">
         <h3><?= $_SESSION["cName"] ?>様の注文履歴</h3>
@@ -98,10 +98,10 @@ $cCode = $_SESSION['cCode'];
                 <th>お支払い額</th>
             </tr>
             <tr>
-                <td>￥1100</td>
-                <td>￥340</td>
-                <td>￥360</td>
-                <td>合計￥1800</td>
+                <td>￥<?=number_format($totalPrice)?></td>
+                <td>￥0</td>
+                <td>￥0</td>
+                <td>合計￥<?=number_format($totalPrice)?></td>
             </tr>
         </table>
         <br />

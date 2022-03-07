@@ -1,12 +1,12 @@
 <?php
 session_start();
 require_once "./common/db_connect.php";
-/*$sql = "INSERT INTO OrderDetails(OrderDetailsID,GoodsID) 
-        VALUES(?,?)";
+
+
+$sql = "DELETE FROM Cart 
+        WHERE CustomersCode = ?";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(array($_SESSION['cCode'], $gID));
-*/
-//自動付番どうにかしろ
+$stmt->execute(array($_SESSION['cCode']));
 
 header("Location: order_comp.php");
 exit();
