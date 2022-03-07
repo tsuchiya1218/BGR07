@@ -14,7 +14,6 @@ if ($_SESSION['cCode'] != '') {
         <p><a href="./mypage_credit.php">クレジットカード情報</a></p>
         <p><a href="./mypage_login.php">ログイン情報</a></p>
         <p><a href="./mypage_personal.php">個人情報</a></p>
-        <p><a href="./mypage_history.php">注文履歴</a></p>
     </ul>
     </div>
     EOM;

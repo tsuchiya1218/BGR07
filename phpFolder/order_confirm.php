@@ -96,16 +96,14 @@ EOM;
     </table>
     <table border="1">
         <tr>
-            <th>商品合計金額</th>
             <th>手数料</th>
             <th>送料</th>
             <th>お支払い額</th>
         </tr>
         <tr>
-            <td>￥1100</td>
-            <td>￥340</td>
-            <td>￥360</td>
-            <td>合計￥1800</td>
+            <td>￥0</td>
+            <td>￥0</td>
+            <td>合計￥<?=$nfSubTotal?></td>
         </tr>
     </table>
     <button type="button" onClick="history.back()">戻る</button>
