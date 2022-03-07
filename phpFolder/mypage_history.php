@@ -98,10 +98,10 @@ $cCode = $_SESSION['cCode'];
                 <th>お支払い額</th>
             </tr>
             <tr>
-                <td>￥1100</td>
-                <td>￥340</td>
-                <td>￥360</td>
-                <td>合計￥1800</td>
+                <td>￥<?=number_format($totalPrice)?></td>
+                <td>￥0</td>
+                <td>￥0</td>
+                <td>合計￥<?=number_format($totalPrice)?></td>
             </tr>
         </table>
         <br />
