@@ -27,10 +27,11 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
 <div class="page_body">
     <div class="goods_left">
         <img src="./img/<?= $rec["ImgURL"] ?>" width="280" height="300">
+        <!--
         <br>↓ここに別の画像を数枚表示↓<br>
         　□　□　□　□<br>
         ↑ここに別の画像を数枚表示↑
-
+        -->
     </div>
 
     <div class="goods_right">
@@ -101,7 +102,7 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC)
         </div>
     </div>
     <h4>注意事項</h4>
-    <ul>
+    <ul style="list-style: none;">
         <li>画像は合成イメージです。実際のアイテムとは異なる場合があります。</li>
         <li>ご使用のモニターの設定により、実際のアイテムと色味が異なる場合があります。</li>
     </ul>

@@ -58,6 +58,7 @@ if (!empty($_REQUEST['email'])) {
         if (($row["cnt"] > 0)) {
             $_SESSION['eMsg']['email'] = '登録されていないメールアドレスを入力してください。';
             $_SESSION['val']['email'] = htmlspecialchars($_POST['email']);
+            $errorCheck = false;
         }
     } else {
         $_SESSION['eMsg']['email'] = 'メールアドレスが正しくありません。';

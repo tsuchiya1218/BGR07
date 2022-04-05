@@ -9,7 +9,11 @@ require "./common/banner.php";
         ご注文ありがとうございました。<br>
         商品の発送は最後まで責任をもって行います<br>
         またのご利用をお待ちしております
+        左上の当サイトロゴからTOPへと戻れます。
     </p>
+    <p><a href="./index.php">HOMEへ</a></p>
+
+    <!--
     <table border='1'>
         <tr>
             <th>商品名</th>
@@ -18,6 +22,7 @@ require "./common/banner.php";
             <th>金額</th>
         </tr>
         <?php
+        /*
         $totalPrice = 0;
         $totalAmount = 0;
         $sql = "SELECT CustomersCode,Cart.GoodsID,CartQuantity,SubTotal,GoodsName,CategoryName,
@@ -92,7 +97,7 @@ require "./common/banner.php";
         <td>$rec[CustomersAddress2]</td>
     </tr>
 EOM;
-        ?>
+        */?>
     </table>
     <table border="1">
         <tr>
@@ -108,6 +113,7 @@ EOM;
             <td>合計￥1800</td>
         </tr>
     </table>
+    -->
 </main>
 <?php
 require "./common/footer.php";

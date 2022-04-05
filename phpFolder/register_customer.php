@@ -24,7 +24,7 @@ require_once "./common/db_connect.php";
                                                                 } ?>" placeholder="例:日本 電子" maxlength="30">
                 <?php
                 if (isset($_SESSION['eMsg']['name'])) {
-                    echo '<br>' . $_SESSION['eMsg']['name'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['name'] . '</div';
                     unset($_SESSION['eMsg']['name']);
                 }
                 ?>
@@ -38,7 +38,7 @@ require_once "./common/db_connect.php";
                                                                     } ?>" placeholder="例:1111111" maxlength="7">
                 <?php
                 if (isset($_SESSION['eMsg']['zipcode'])) {
-                    echo '<br>' . $_SESSION['eMsg']['zipcode'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['zipcode'] . '</div>';
                     unset($_SESSION['eMsg']['zipcode']);
                 }
                 ?>
@@ -52,7 +52,7 @@ require_once "./common/db_connect.php";
                                                                     } ?>" placeholder="例:東京都新宿区">
                 <?php
                 if (isset($_SESSION['eMsg']['address1'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address1'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address1'] . '</div>';
                     unset($_SESSION['eMsg']['address1']);
                 }
                 ?>
@@ -66,7 +66,7 @@ require_once "./common/db_connect.php";
                                                                     } ?>" placeholder="例:1-25-4 日本電子ビル 6F 161号室">
                 <?php
                 if (isset($_SESSION['eMsg']['address2'])) {
-                    echo '<br>' . $_SESSION['eMsg']['address2'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['address2'] . '</div>';
                     unset($_SESSION['eMsg']['address2']);
                 }
                 ?>
@@ -80,7 +80,7 @@ require_once "./common/db_connect.php";
                                                                 } ?>" placeholder="例:03-3369-xxxx" maxlength="20">
                 <?php
                 if (isset($_SESSION['eMsg']['tel'])) {
-                    echo '<br>' . $_SESSION['eMsg']['tel'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['tel'] . '</div>';
                     unset($_SESSION['eMsg']['tel']);
                 }
                 ?>
@@ -94,7 +94,7 @@ require_once "./common/db_connect.php";
                                                                 } ?>" placeholder="例:denshi@nichiden.com">
                 <?php
                 if (isset($_SESSION['eMsg']['email'])) {
-                    echo '<br>' . $_SESSION['eMsg']['email'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['email'] . '</div>';
                     unset($_SESSION['eMsg']['email']);
                 }
                 ?>
@@ -106,7 +106,7 @@ require_once "./common/db_connect.php";
                 <input type="password" name="pass" size="8" minlength="8" maxlength="8">
                 <?php
                 if (isset($_SESSION['eMsg']['pass'])) {
-                    echo '<br>' . $_SESSION['eMsg']['pass'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['pass'] . '</div>';
                     unset($_SESSION['eMsg']['pass']);
                 }
                 ?>
@@ -118,7 +118,7 @@ require_once "./common/db_connect.php";
                 <input type="password" name="pass2" size="8" minlength="8" maxlength="8">
                 <?php
                 if (isset($_SESSION['eMsg']['pass2'])) {
-                    echo '<br>' . $_SESSION['eMsg']['pass2'];
+                    echo '<br><div class="message">' . $_SESSION['eMsg']['pass2'] . '</div>';
                     unset($_SESSION['eMsg']['pass2']);
                 }
                 ?>

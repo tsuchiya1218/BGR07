@@ -19,7 +19,11 @@ $rec = $stmt->FETCH(PDO::FETCH_ASSOC);
         <h3><?= $_SESSION["cName"] ?>様の個人登録情報</h3>
         <p>電話番号：<?= $rec["CustomersPhone"] ?></p>
         <p>誕生日：<?= $rec["CustomersBirthday"] ?></p>
-        <p>性別：<?= $rec["CustomersGender"] ?></p>
+        <p>性別:<?php if($rec["CustomersGender"] == 1){
+            echo "男";
+            }else if($rec["CustomersGender"] == 2){
+                echo "女";
+            }?></p>
         <button type="button" onClick="history.back()">戻る</button>
     </div>
     <div class="black-background" id="js-black-bg"></div>

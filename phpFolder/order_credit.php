@@ -9,7 +9,7 @@ session_start();
 <div class="popup" id="js-popup">
   <div class="popup-inner">
     <p>お支払いを完了してください</p>
-    <form action="order_set.php" method="POST">
+    <form action="order_req.php" method="POST">
       <p>カード名義人：<input type="text"></p>
       <p>カード番号：<input type="text"></p>
       <p>カード有効期限：<input type="text"></p>

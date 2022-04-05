@@ -8,7 +8,7 @@ session_start();
 
 <div class="popup" id="js-popup">
   <div class="popup-inner">
-    <form action="order_comp.php" method="POST">
+    <form action="order_req.php" method="POST">
       <p>受付方法：（コンビニ払い）</p>
       <p>近くの８TWELVEのコンビニにて決済お願い致します。</p>
       <img src="./img/conbiniISBN.png">
